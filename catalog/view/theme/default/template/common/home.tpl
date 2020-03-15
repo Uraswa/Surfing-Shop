@@ -1,4 +1,4 @@
-<div class="page-container" style='background-image: url("https://i1.wp.com/www.surfer.com/wp-content/uploads/2019/12/laura.jpg?resize=1920%2C1080&ssl=1");'>
+<div class="page-container" style='background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Surfing-Backgrounds.jpg");'>
     <?php echo $header; ?>
     <div class="container bg-white">
         <div class="row"><?php echo $column_left; ?>

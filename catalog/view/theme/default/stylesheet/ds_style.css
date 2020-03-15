@@ -56,6 +56,23 @@
     background: var(--grey);
 }
 
+/*Header*/
+
+.navigation {
+    padding-top: 24px;
+    padding-left: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation__icons {
+    padding-top: 30px;
+}
+
+.navigation__icons a{
+    margin-right: 20px;
+}
+
 /*МОДУЛИ*/
 
 /*Контейнер с картинкой(Высота контейнера = высота картинки)*/
