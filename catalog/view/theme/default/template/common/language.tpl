@@ -1,5 +1,5 @@
 <?php if (count($languages) > 1) { ?>
-<div class="pull-left language-selector">
+<div class="language-selector">
     <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-language">
         <div class="btn-group">
             <button class="btn btn-link dropdown-toggle language__text" data-toggle="dropdown">

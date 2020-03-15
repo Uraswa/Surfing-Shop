@@ -67,6 +67,7 @@
 
 .navigation__icons {
     padding-top: 30px;
+    display: flex;
 }
 
 .navigation__icons a{
@@ -92,4 +93,5 @@
 
 .language__text {
     color: white !important;
+    padding-top: 0 !important;
 }
