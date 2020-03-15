@@ -3,8 +3,6 @@ class ControllerCommonLanguage extends Controller {
 	public function index() {
 		$this->load->language('common/language');
 
-		$data['text_language'] = $this->language->get('text_language');
-
 		$data['action'] = $this->url->link('common/language/language', '', isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1')));
 
 		$data['code'] = $this->session->data['language'];
@@ -17,6 +15,9 @@ class ControllerCommonLanguage extends Controller {
 
 		foreach ($results as $result) {
 			if ($result['status']) {
+			    if ($data['code'] == $result['code']) {
+                    $data['text_language'] = $result['name'];
+                }
 				$data['languages'][] = array(
 					'name' => $result['name'],
 					'code' => $result['code']
