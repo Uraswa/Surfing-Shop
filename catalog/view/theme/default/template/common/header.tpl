@@ -69,11 +69,11 @@
             </div>
             <div class="navigation__icons">
                 <?php echo $language ?>
-                <a href="https://google.com"><img src="image/catalog/facebook_icon.png" alt=""></a>
-                <a href="https://google.com"><img src="image/catalog/twitter_icon.png" alt=""></a>
-                <a href="https://google.com"><img src="image/catalog/youtube_icon.png"></a>
-                <a href="https://google.com"><img src="image/catalog/pinterest_icon.png" alt=""></a>
-                <a href="https://google.com"><img src="image/catalog/insta_icon.png" alt=""></a>
+                <a class="hidden-xs" href="https://google.com"><img src="image/catalog/facebook_icon.png" alt=""></a>
+                <a class="hidden-xs" href="https://google.com"><img src="image/catalog/twitter_icon.png" alt=""></a>
+                <a class="hidden-xs" href="https://google.com"><img src="image/catalog/youtube_icon.png"></a>
+                <a class="hidden-xs" href="https://google.com"><img src="image/catalog/pinterest_icon.png" alt=""></a>
+                <a class="hidden-xs" href="https://google.com"><img src="image/catalog/insta_icon.png" alt=""></a>
             </div>
         </div>
     </div>

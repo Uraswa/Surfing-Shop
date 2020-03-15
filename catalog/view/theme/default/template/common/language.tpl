@@ -5,7 +5,7 @@
             <button class="btn btn-link dropdown-toggle language__text" data-toggle="dropdown">
                 <span class=""><?php echo $text_language; ?></span> <i
                         class="fa fa-caret-down"></i></button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu pull-right" >
                 <?php foreach ($languages as $language) { ?>
                 <li>
                     <button class="btn btn-link btn-block language-select" type="button"
