@@ -55,3 +55,12 @@
 .bg-grey {
     background: var(--grey);
 }
+
+/*МОДУЛИ*/
+
+/*Контейнер с картинкой(Высота контейнера = высота картинки)*/
+
+.page-container {
+    height: 700px;
+    overflow: visible;
+}
