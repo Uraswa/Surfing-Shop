@@ -1,11 +1,13 @@
 :root {
     --yellow: #fff51f;
     --red: #e24602;
+    --light-red: #fb4d01;
     --dark-grey: #333;
     --blue: #26d2fc;
     --grey: #aaa;
     --light-grey: #eaeaea;
     --light-blue: #abeafa;
+    --raleway: 'Raleway', sans-serif;
 }
 
 .text-red {
@@ -36,6 +38,10 @@
     background: var(--red);
 }
 
+.bg-light-red {
+    background: var(--light-red);
+}
+
 .bg-dark {
     background: var(--dark-grey);
 }
@@ -56,6 +62,10 @@
     background: var(--grey);
 }
 
+.raleway {
+    font-family: var(--raleway);
+}
+
 /*Header*/
 
 .navigation {
@@ -63,6 +73,7 @@
     padding-left: 70px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 .navigation__icons {
@@ -94,4 +105,113 @@
 .language__text {
     color: white !important;
     padding-top: 0 !important;
+}
+
+/*UserInfo(корзина + поиск + логин)*/
+
+.user__info {
+    height: auto;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.user__info__text_blocks {
+    padding: 10px 0 10px 35px;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .user__info {
+        margin-bottom: 20px;
+    }
+}
+
+/*Cart*/
+
+#cart {
+    margin-bottom: 0 !important;
+}
+
+.cart__wrapper {
+    height: 100%;
+}
+
+.cart {
+    padding: 15px 25px 15px 15px;
+    display: flex;
+    color: white;
+}
+
+.cart > div:nth-child(2) {
+    width: 100%;
+    padding-left: 15px;
+}
+
+.cart__buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart__price {
+    font-size: 1.5em;
+}
+
+.cart__edit {
+    font-size: 1.3em;
+}
+
+.cart__clear {
+    cursor: pointer;
+}
+
+.cart__dropdown__activator {
+    cursor: pointer;
+}
+
+.cart__buttons div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 5px 0;
+}
+
+.cart__buttons div a {
+    color: white
+}
+
+.cart__buttons div:first-child {
+    background: #ee4a02;
+}
+
+.cart__buttons div:last-child {
+    background: #e24602;
+}
+
+/*Search*/
+
+.search {
+    margin-bottom: 0;
+    display: flex !important;
+}
+
+.search__input {
+    height: 36px;
+    width: 100%;
+    border: 0;
+    padding-left: 10px;
+    margin-bottom: 0 !important;
+}
+
+.search__input::placeholder {
+    text-transform: uppercase;
+}
+
+.search button {
+    border: 0;
+    min-width: 34px;
 }

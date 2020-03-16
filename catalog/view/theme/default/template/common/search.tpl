@@ -1,6 +1,4 @@
-<div id="search" class="input-group">
-  <input type="text" name="search" value="<?php echo $search; ?>" placeholder="<?php echo $text_search; ?>" class="form-control input-lg" />
-  <span class="input-group-btn">
-    <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
-  </span>
+<div class="search">
+  <input id="search" type="text" placeholder="<?php echo $text_search ?>" class="search__input raleway bg-light" name="search">
+  <button class="bg-dark" id="search__button"><img src="image/catalog/Search_Icon.png" alt=""></button>
 </div>

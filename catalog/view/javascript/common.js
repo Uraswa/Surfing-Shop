@@ -51,10 +51,11 @@ $(document).ready(function() {
 	});
 
 	/* Search */
-	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
+	$('#search__button').on('click', function() {
+		console.log('test');
 		var url = $('base').attr('href') + 'index.php?route=product/search';
 
-		var value = $('header #search input[name=\'search\']').val();
+		var value = $('#search').val();
 
 		if (value) {
 			url += '&search=' + encodeURIComponent(value);
@@ -90,6 +91,11 @@ $(document).ready(function() {
 		$('#list-view').addClass('active');
 
 		localStorage.setItem('display', 'list');
+	});
+
+	//Cart
+	$('.cart__dropdown__activator').on('click', function(e) {
+		$('#cart__dropdown').toggle()
 	});
 
 	// Product Grid
@@ -144,12 +150,13 @@ var cart = {
 			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
 			beforeSend: function() {
-				$('#cart > button').button('loading');
+				//$('#cart > button').button('loading');
 			},
 			complete: function() {
-				$('#cart > button').button('reset');
+				//$('#cart > button').button('reset');
 			},
 			success: function(json) {
+				console.log('json', json);
 				$('.alert, .text-danger').remove();
 
 				if (json['redirect']) {
@@ -161,10 +168,10 @@ var cart = {
 
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
-						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+						updateCart(json)
 					}, 100);
 
-					$('html, body').animate({ scrollTop: 0 }, 'slow');
+					//$('html, body').animate({ scrollTop: 0 }, 'slow');
 
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
 				}
@@ -189,7 +196,7 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					updateCart(json)
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -218,7 +225,7 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					updateCart(json)
 				}, 100);
 				
 				var now_location = String(document.location.pathname);
@@ -233,8 +240,15 @@ var cart = {
 				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 			}
 		});
+	},
+	'removeAll'() {
+		const rows = $('.cart__row').each(function () {
+				cart.remove($(this).attr('key'));
+			}
+		);
 	}
-}
+
+};
 
 var voucher = {
 	'add': function() {
@@ -255,7 +269,7 @@ var voucher = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					updateCart(json)
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -363,6 +377,13 @@ $(document).delegate('.agree', 'click', function(e) {
 		}
 	});
 });
+
+function updateCart(json){
+	const regEx = RegExp(/([^-]+)- (.+)/gm);
+	const [_, amount, price] = regEx.exec(json['total']);
+	$('.cart__price').html(price);
+	$('.cart__items').html(amount);
+}
 
 // Autocomplete */
 (function($) {

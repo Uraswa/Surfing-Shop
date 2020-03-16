@@ -33,6 +33,7 @@
     <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="catalog/view/theme/default/stylesheet/ds_style.css">
     <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
     <?php foreach ($styles as $style) { ?>

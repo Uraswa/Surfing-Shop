@@ -52,7 +52,10 @@ class ControllerCommonCart extends Controller {
 		$data['text_checkout'] = $this->language->get('text_checkout');
 		$data['text_recurring'] = $this->language->get('text_recurring');
 		$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+		$data['products_text'] = sprintf($this->language->get('products'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0));
+		$data['total_price'] = $this->currency->format($total, $this->session->data['currency']);
 		$data['text_loading'] = $this->language->get('text_loading');
+		$data['text_cart'] = $this->language->get('text_cart');
 
 		$data['button_remove'] = $this->language->get('button_remove');
 
