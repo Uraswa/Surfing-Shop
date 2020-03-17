@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <?php echo $userinfo ?>
+                <?php echo $banner ?>
             </div>
             <?php if ($column_left && $column_right) { ?>
             <?php $class = 'col-sm-6'; ?>

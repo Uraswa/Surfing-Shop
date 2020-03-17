@@ -16,6 +16,7 @@ class ControllerCommonHome extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 		$data['cart'] = $this->load->controller('common/cart');
+		$data['banner'] = $this->load->controller('common/welcome');
 
         $data['userinfo'] = $this->load->controller('common/userinfo');
 

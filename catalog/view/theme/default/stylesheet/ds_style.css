@@ -96,7 +96,7 @@
 /*Контейнер с картинкой(Высота контейнера = высота картинки)*/
 
 .page-container {
-    height: 700px;
+    height: 80vh;
     overflow: visible;
 }
 
@@ -214,4 +214,49 @@
 .search button {
     border: 0;
     min-width: 34px;
+}
+
+/*Welcome banner*/
+
+.welcomeBanner {
+    padding: 82px 36px 82px 25px;
+    margin-top: 10px;
+}
+
+.welcomeBanner__title {
+    margin-bottom: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-top: 0;
+}
+
+.welcomeBanner__text {
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 14px;
+    font-style: italic;
+    margin: 0;
+}
+
+@media (max-width: 1199px){
+    .welcomeBanner {
+        padding: 30px 10px 30px 10px;
+    }
+
+    .welcomeBanner__title {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 992px){
+    .welcomeBanner__title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px){
+    .welcomeBanner {
+        margin-bottom: 20px;
+    }
 }
