@@ -35,6 +35,8 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="catalog/view/theme/default/stylesheet/ds_style.css">
+    <link rel="stylesheet" href="catalog/view/theme/default/stylesheet/owl.carousel.min.css">
+    <link rel="stylesheet" href="catalog/view/theme/default/stylesheet/owl.theme.default.min.css">
     <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
     <?php foreach ($styles as $style) { ?>
     <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>"

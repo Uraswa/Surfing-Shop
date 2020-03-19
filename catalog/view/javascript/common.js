@@ -23,6 +23,26 @@ function getURLVar(key) {
 }
 
 $(document).ready(function() {
+	$(".owl-carousel").owlCarousel({
+		loop:true,
+		margin:10,
+		nav:true,
+		dotsContainer: '#dots__container',
+		navContainer: '#carousel__main__nav',
+        navElement: 'div',
+		navText: [`<img src="image/catalog/left-arrow.png"/>`,`<img src="image/catalog/right-arrow.png"/>`],
+		responsive:{
+			0:{
+				items:1
+			},
+			600:{
+				items:1
+			},
+			1000:{
+				items:1
+			}
+		}
+	});
 	// Highlight any found errors
 	$('.text-danger').each(function() {
 		var element = $(this).parent().parent();
