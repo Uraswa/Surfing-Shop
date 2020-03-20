@@ -21,6 +21,7 @@ class ControllerCommonHome extends Controller {
         $data['userinfo'] = $this->load->controller('common/userinfo');
         $data['slider'] = $this->load->controller('product/slider');
         $data['menu'] = $this->load->controller('common/menu');
+        $data['open_banner'] = $this->load->controller('common/open');
 
 		$this->response->setOutput($this->load->view('common/home', $data));
 	}

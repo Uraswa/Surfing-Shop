@@ -7,6 +7,7 @@
                 <?php echo $userinfo ?>
                 <?php echo $banner ?>
                 <?php echo $menu ?>
+                <?php echo $open_banner ?>
             </div>
             <?php if ($column_left && $column_right) { ?>
             <?php $class = 'col-sm-6'; ?>
