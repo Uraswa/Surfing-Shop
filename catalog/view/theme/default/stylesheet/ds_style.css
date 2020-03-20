@@ -91,12 +91,16 @@
     }
 }
 
+body {
+    background: #f8f8f8;
+}
+
 /*МОДУЛИ*/
 
 /*Контейнер с картинкой(Высота контейнера = высота картинки)*/
 
 .page-container {
-    height: 80vh;
+    height: 700px;
     overflow: visible;
 }
 
@@ -370,4 +374,39 @@
         display: none;
     }
 
+}
+
+/*Menu*/
+
+.menu {
+    margin-top: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+.menu__title {
+    padding: 30px 0 21px 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}
+
+.menu__item {
+    display: flex;
+    align-items: center;
+    height: 43px;
+    padding-left: 40px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.menu__item:hover > a, .menu__item:hover{
+    background: var(--dark-grey);
+    color: #fff;
+}
+
+.menu__item > a {
+    color: #000;
+    font-size: 14px;
+    width: 100%;
 }
