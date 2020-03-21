@@ -439,6 +439,7 @@ body {
     overflow-x: hidden;
     justify-content: space-between;
     margin-top: 30px !important;
+    margin-bottom: 0 !important;
 }
 
 .brands__item {
@@ -450,4 +451,53 @@ body {
 .brands__brand {
     height: 150px;
     width: auto !important;
+}
+
+/*instagram*/
+
+.instagram {
+    padding-top: 50px;
+    padding-bottom: 58px;
+}
+
+#instagram__carousel {
+    background: transparent;
+}
+
+.instagram__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.insta__title__bold {
+    font-weight: 900;
+    font-size: 22px;
+    margin: 0 10px;
+}
+
+.insta__title__link {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.instagram__carousel__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instagram__carousel__slide img {
+    width: 180px !important;
+    height: 180px;
+    border: 5px white solid;
+}
+
+@media (max-width: 343px){
+    .insta__title__bold {
+        margin: 0 0;
+        font-size: 20px;
+    }
 }

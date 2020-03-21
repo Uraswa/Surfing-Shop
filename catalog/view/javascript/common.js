@@ -60,6 +60,29 @@ $(document).ready(function() {
 		},
 		dots: false
 	});
+	$('#instagram__carousel').owlCarousel({
+		responsive:{
+			0: {
+				items: 1
+			},
+			400: {
+				items: 2
+			},
+			579:{
+				items:3
+			},
+			768: {
+				items: 4
+			},
+			993:{
+				items:5
+			},
+			1200:{
+				items:6
+			}
+		},
+		dots: false,
+	});
 	// Highlight any found errors
 	$('.text-danger').each(function() {
 		var element = $(this).parent().parent();

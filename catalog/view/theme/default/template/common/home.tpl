@@ -22,6 +22,7 @@
             </div>
             <?php echo $column_right; ?></div>
             <?php echo $brands ?>
+            <?php echo $instagram ?>
     </div>
     <?php echo $footer; ?>
 </div>
