@@ -23,6 +23,7 @@ class ControllerCommonHome extends Controller {
         $data['open_banner'] = $this->load->controller('common/open');
         $data['brands'] = $this->load->controller('common/brands');
         $data['instagram'] = $this->load->controller('common/instagram');
+        $data['social_links'] = $this->load->controller('common/social_links');
 
 		$this->response->setOutput($this->load->view('common/home', $data));
 	}

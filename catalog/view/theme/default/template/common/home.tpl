@@ -23,6 +23,7 @@
             <?php echo $column_right; ?></div>
             <?php echo $brands ?>
             <?php echo $instagram ?>
+            <?php echo $social_links ?>
     </div>
     <?php echo $footer; ?>
 </div>
