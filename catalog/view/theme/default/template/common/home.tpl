@@ -18,9 +18,10 @@
             <?php } ?>
             <div id="content" class="<?php echo $class; ?>">
                 <?php echo $slider ?>
-                <?php echo $content_bottom; ?>
+
             </div>
             <?php echo $column_right; ?></div>
+            <?php echo $brands ?>
     </div>
     <?php echo $footer; ?>
 </div>

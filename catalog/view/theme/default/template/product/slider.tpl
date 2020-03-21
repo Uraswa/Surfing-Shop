@@ -1,6 +1,6 @@
 <div class="slider__wrapper row">
     <div class="col-xs-12 col-md-11">
-        <div class="owl-carousel owl-theme" style="background: transparent">
+        <div class="owl-carousel owl-theme" style="background: transparent" id="main_carousel">
             <div class="slide item">
                 <div class="slide__demo">
                     <div class="slide__demo__content">

@@ -23,7 +23,7 @@ function getURLVar(key) {
 }
 
 $(document).ready(function() {
-	$(".owl-carousel").owlCarousel({
+	$("#main_carousel").owlCarousel({
 		loop:true,
 		margin:10,
 		nav:true,
@@ -42,6 +42,23 @@ $(document).ready(function() {
 				items:1
 			}
 		}
+	});
+	$("#brands_carousel").owlCarousel({
+		responsive:{
+			0:{
+				items:1
+			},
+			365: {
+				items: 2
+			},
+			600:{
+				items:3
+			},
+			1000:{
+				items:5
+			}
+		},
+		dots: false
 	});
 	// Highlight any found errors
 	$('.text-danger').each(function() {

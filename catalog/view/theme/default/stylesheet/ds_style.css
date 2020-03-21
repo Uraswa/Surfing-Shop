@@ -430,3 +430,24 @@ body {
     text-transform: uppercase;
     font-weight: 900;
 }
+
+/*brands*/
+
+.brands {
+    display: flex;
+    height: 160px;
+    overflow-x: hidden;
+    justify-content: space-between;
+    margin-top: 30px !important;
+}
+
+.brands__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brands__brand {
+    height: 150px;
+    width: auto !important;
+}
