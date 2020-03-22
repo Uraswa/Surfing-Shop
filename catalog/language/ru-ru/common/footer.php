@@ -14,4 +14,5 @@ $_['text_account']      = 'Личный кабинет';
 $_['text_order']        = 'История заказов';
 $_['text_wishlist']     = 'Мои закладки';
 $_['text_newsletter']   = 'Рассылка новостей';
-$_['text_powered']      = 'Работает на <a target="_blank" href="http://myopencart.com/">ocStore</a><br /> %s &copy; %s';
+$_['text_powered']      = '&copy; %s %s. Все права защищены - Разработано <a href="https://degam-soft.com">degam-soft</a>';
+$_['phone'] = 'Телефон';
