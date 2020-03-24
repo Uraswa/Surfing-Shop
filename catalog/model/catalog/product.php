@@ -289,6 +289,15 @@ class ModelCatalogProduct extends Model {
 		return $product_data;
 	}
 
+	public function getSaleProducts($limit){
+        $query = $this->db->query("SELECT price, product_id FROM " . DB_PREFIX . "product_special LIMIT $limit");
+        $products = [];
+        foreach ($query->rows as $result){
+            $products[] = $this->getProduct($result["product_id"]);
+        }
+        return $products;
+    }
+
 	public function getBestSellerProducts($limit) {
 		$product_data = $this->cache->get('product.bestseller.' . (int)$this->config->get('config_language_id') . '.' . (int)$this->config->get('config_store_id') . '.' . $this->config->get('config_customer_group_id') . '.' . (int)$limit);
 

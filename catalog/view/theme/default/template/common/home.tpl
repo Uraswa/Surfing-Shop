@@ -20,6 +20,7 @@
                 <?php echo $slider ?>
                 <?php echo $newest_products ?>
                 <?php echo $top_products ?>
+                <?php echo $sale_products ?>
             </div>
             <?php echo $column_right; ?></div>
             <?php echo $brands ?>

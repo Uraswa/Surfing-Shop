@@ -26,6 +26,7 @@ class ControllerCommonHome extends Controller {
         $data['social_links'] = $this->load->controller('common/social_links');
         $data['newest_products'] = $this->load->controller('product/newest_products', 99);
         $data['top_products'] = $this->load->controller('product/top_products');
+        $data['sale_products'] = $this->load->controller('product/sale_products');
 
 		$this->response->setOutput($this->load->view('common/home', $data));
 	}
