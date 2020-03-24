@@ -83,6 +83,33 @@ $(document).ready(function() {
 		},
 		dots: false,
 	});
+	$('.products__carousel__1').owlCarousel({
+		items: 3,
+		responsive:{
+			0: {
+				items: 1
+			},
+			579: {
+				items: 2
+			},
+			1200:{
+				items:3
+			}
+		},
+		loop: true,
+		mouseDrag: false,
+		dots: false
+	});
+
+	$('.products__carousel__1__nav_btn').on('click', function() {
+		if ($(this).hasClass('obratno')){
+			$(this).parent().parent().parent().children('.owl-carousel').trigger('prev.owl.carousel');
+		} else {
+			$(this).parent().parent().parent().children('.owl-carousel').trigger('next.owl.carousel');
+		}
+
+	});
+
 	// Highlight any found errors
 	$('.text-danger').each(function() {
 		var element = $(this).parent().parent();
