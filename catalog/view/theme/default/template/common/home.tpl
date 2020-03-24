@@ -19,6 +19,7 @@
             <div id="content" class="<?php echo $class; ?>">
                 <?php echo $slider ?>
                 <?php echo $newest_products ?>
+                <?php echo $top_products ?>
             </div>
             <?php echo $column_right; ?></div>
             <?php echo $brands ?>
