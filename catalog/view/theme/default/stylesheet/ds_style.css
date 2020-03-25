@@ -399,7 +399,7 @@ body {
     font-weight: 900;
 }
 
-.menu__item:hover > a, .menu__item:hover{
+.menu__item:hover > a, .menu__item:hover, .menu__item.selected > a, .menu__item.selected{
     background: var(--dark-grey);
     color: #fff;
 }
