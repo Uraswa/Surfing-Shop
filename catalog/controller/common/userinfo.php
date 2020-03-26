@@ -4,6 +4,8 @@ class ControllerCommonUserinfo extends Controller {
 
     public function index(){
 
+        $this->load->language('common/userinfo');
+
         $data['cart'] = $this->load->controller('common/cart');
         $data['search'] = $this->load->controller('common/search');
 
