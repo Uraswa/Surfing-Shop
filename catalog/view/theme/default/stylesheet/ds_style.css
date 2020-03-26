@@ -114,6 +114,11 @@ body {
     }
 }
 
+.page-container-small {
+    height: 370px;
+    overflow-y: visible;
+}
+
 /*Language*/
 
 .language__text {
