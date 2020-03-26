@@ -9,13 +9,13 @@ class ControllerCommonMenu extends Controller {
         $categories = $this->model_catalog_category->getCategories();
 
         $items = [[$this->language->get('about'), '']];
-        $main_category = explode('_', $this->request->get['path'])[0];
+        $main_category = explode('_', isset($this->request->get['path']) && $this->request->get['route'] == 'product/category' ? $this->request->get['path'] : '')[0];
 
         foreach ($categories as $category) {
             $items[] = [
                 $category['name'],
                 $this->url->link('product/category', 'path='.$category['category_id']),
-                $main_category == $category['category_id'] && $this->request->get['route'] == 'product/category'
+                $main_category == $category['category_id']
             ];
         }
 
