@@ -9,12 +9,13 @@ class ControllerCommonMenu extends Controller {
         $categories = $this->model_catalog_category->getCategories();
 
         $items = [[$this->language->get('about'), '']];
+        $main_category = explode('_', $this->request->get['path'])[0];
 
         foreach ($categories as $category) {
             $items[] = [
                 $category['name'],
                 $this->url->link('product/category', 'path='.$category['category_id']),
-                isset($this->request->get['path']) && $this->request->get['path'] == $category['category_id'] && $this->request->get['route'] == 'product/category'
+                $main_category == $category['category_id'] && $this->request->get['route'] == 'product/category'
             ];
         }
 
@@ -30,12 +31,10 @@ class ControllerCommonMenu extends Controller {
             $items[] = [$this->language->get($other_link), '', false];
         }
 
-        $data['menu'] = $this->language->get('menu');
-        $data['items'] = $items;
-
-
-
-        return $this->load->view('common/menu', $data);
+        return $this->load->controller('common/left_menu', [
+            'title' => $this->language->get('menu'),
+            'items' => $items
+        ]);
     }
 
 
