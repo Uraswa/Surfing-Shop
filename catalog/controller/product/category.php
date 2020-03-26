@@ -125,6 +125,11 @@ class ControllerProductCategory extends Controller {
 			$data['button_list'] = $this->language->get('button_list');
 			$data['button_grid'] = $this->language->get('button_grid');
 
+
+            $data['userinfo'] = $this->load->controller('common/userinfo');
+            $data['menu'] = $this->load->controller('common/menu');
+            $data['open_banner'] = $this->load->controller('common/open');
+
 			// Set the last category breadcrumb
 			$data['breadcrumbs'][] = array(
 				'text' => $category_info['name'],
@@ -436,6 +441,7 @@ class ControllerProductCategory extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+
 
 			$this->response->setOutput($this->load->view('error/not_found', $data));
 		}
