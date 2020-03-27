@@ -10,7 +10,6 @@ class ControllerCommonMenu extends Controller {
 
         $items = [[$this->language->get('about'), '']];
         $main_category = explode('_', isset($this->request->get['path']) && $this->request->get['route'] == 'product/category' ? $this->request->get['path'] : '')[0];
-
         foreach ($categories as $category) {
             $items[] = [
                 $category['name'],

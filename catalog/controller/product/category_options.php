@@ -10,9 +10,11 @@ class ControllerProductCategoryOptions extends Controller {
         $main_category = explode('_', $this->request->get['path'])[0];
         $categories = $this->model_catalog_category->getCategories($main_category);
         $items = [];
+        $manufacturer = isset($this->request->get['manufacturer']) ? "manufacturer=".$this->request->get['manufacturer'] : '';
         foreach ($categories as $category) {
             $path = $main_category.'_'.$category['category_id'];
-            $items[] = [$category['name'], $this->url->link('product/category', "path=$path") , $this->request->get['path'] == $path];
+            $url = "$manufacturer&path=".$path;
+            $items[] = [$category['name'], $this->url->link('product/category', $url) , $this->request->get['path'] == $path];
         }
 
         return $this->load->view('common/left_menu', [

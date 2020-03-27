@@ -50,6 +50,8 @@ class ControllerCatalogManufacturer extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$this->load->model('catalog/manufacturer');
+		$this->load->model('catalog/category');
+
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_catalog_manufacturer->editManufacturer($this->request->get['manufacturer_id'], $this->request->post);
@@ -260,6 +262,9 @@ class ControllerCatalogManufacturer extends Controller {
 	}
 
 	protected function getForm() {
+
+        $data['categories'] = $this->model_catalog_category->getCategories();
+        $data['manufacturer_categories'] = $this->model_catalog_manufacturer->getManufacturerCategoriesIds($this->request->get['manufacturer_id']);
     //CKEditor
     if ($this->config->get('config_editor_default')) {
         $this->document->addScript('view/javascript/ckeditor/ckeditor.js');

@@ -166,4 +166,35 @@ class ModelCatalogManufacturer extends Model {
 
 		return $query->row['total'];
 	}
+
+	public function getManufacturerCategories($manufacturer_id){
+	    $this->load->model('catalog/category');
+	    $sql = "SELECT category_id FROM " . DB_PREFIX . "manufacturer_to_categories WHERE manufacturer_id=". $manufacturer_id;
+	    $ids = $this->db->query($sql)->row;
+	    $categories = [];
+	    foreach ($ids as $id){
+	        $categories[] = $this->model_catalog_category->getCategory($id);
+        }
+	    return $categories;
+    }
+
+    public function getManufacturerCategoriesIds($manufacturer_id){
+        $this->load->model('catalog/category');
+        $sql = "SELECT * FROM " . DB_PREFIX . "manufacturer_to_categories WHERE manufacturer_id=". $manufacturer_id;
+        $ids =  $this->db->query($sql)->rows;
+        return array_map(function($item){
+            return $item['category_id'];
+        }, $ids);
+    }
+
+    public function getManufacturersByCategory($category_id){
+        $this->load->model('catalog/manufacturer');
+        $sql = "SELECT manufacturer_id FROM " . DB_PREFIX . "manufacturer_to_categories WHERE category_id=". $category_id;
+        $ids = $this->db->query($sql)->row;
+        $manufacturers = [];
+        foreach ($ids as $id){
+            $manufacturers[] = $this->model_catalog_manufacturer->getManufacturer($id);
+        }
+        return $manufacturers;
+    }
 }

@@ -130,6 +130,7 @@ class ControllerProductCategory extends Controller {
             $data['menu'] = $this->load->controller('common/menu');
             $data['open_banner'] = $this->load->controller('common/open');
             $data['category_options'] = $this->load->controller('product/category_options');
+            $data['manufacturers'] = $this->load->controller('product/manufacturer_left_list');
 
 			// Set the last category breadcrumb
 			$data['breadcrumbs'][] = array(

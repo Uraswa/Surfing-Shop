@@ -43,6 +43,16 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label"> Категории </label>
+                <div class="col-sm-10">
+                  <select name="categories" id="" multiple>
+                    <?php foreach($categories as $category) { ?>
+                        <option value="<?php echo $category['category_id'] ?>" <?php echo in_array($category['category_id'], $manufacturer_categories) ? 'selected' : ''?>><?php echo $category['name']; ?></option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>
                 <div class="col-sm-10">
                   <textarea name="manufacturer_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description; ?>" id="input-description<?php echo $language['language_id']; ?>" data-lang="<?php echo $lang; ?>" class="form-control summernote"><?php echo isset($manufacturer_description[$language['language_id']]) ? $manufacturer_description[$language['language_id']]['description'] : ''; ?></textarea>

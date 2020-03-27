@@ -8,6 +8,7 @@
         <?php echo $userinfo ?>
         <?php echo $menu ?>
         <?php echo $category_options ?>
+        <?php echo $manufacturers ?>
         <?php echo $open_banner ?>
       </div>
       <div id="content" class="col-sm-9" style="margin-top: 180px"><?php echo $content_top; ?>
