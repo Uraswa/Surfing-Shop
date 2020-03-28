@@ -562,11 +562,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 5px;
+    height: 100%;
 }
 
 
 .product__item {
-    width: 270px;
+    width: 100%;
     border: 10px white solid;
     background: white;
     height: 100%;
@@ -578,7 +580,8 @@ body {
 
 .product__item__img_container img {
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    width: 100%;
 }
 
 .product__item__desc {
