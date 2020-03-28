@@ -187,6 +187,7 @@ class ControllerProductCategory extends Controller {
 			$filter_data = array(
 				'filter_category_id' => $category_id,
 				'filter_filter'      => $filter,
+				'filter_manufacturer_id' => isset($this->request->get['manufacturer']) ? $this->request->get['manufacturer'] : null,
 				'sort'               => $sort,
 				'order'              => $order,
 				'start'              => ($page - 1) * $limit,
