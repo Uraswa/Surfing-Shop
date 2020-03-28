@@ -81,7 +81,7 @@
     display: flex;
 }
 
-.navigation__icons a{
+.navigation__icons a {
     margin-right: 20px;
 }
 
@@ -258,7 +258,7 @@ body {
     margin: 0;
 }
 
-@media (max-width: 1199px){
+@media (max-width: 1199px) {
     .welcomeBanner {
         padding: 30px 10px 30px 10px;
     }
@@ -268,13 +268,13 @@ body {
     }
 }
 
-@media (max-width: 992px){
+@media (max-width: 992px) {
     .welcomeBanner__title {
         font-size: 20px;
     }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .welcomeBanner {
         margin-bottom: 20px;
     }
@@ -404,7 +404,7 @@ body {
     font-weight: 900;
 }
 
-.menu__item:hover > a, .menu__item:hover, .menu__item.selected > a, .menu__item.selected{
+.menu__item:hover > a, .menu__item:hover, .menu__item.selected > a, .menu__item.selected {
     background: var(--dark-grey);
     color: #fff;
 }
@@ -499,7 +499,7 @@ body {
     border: 5px white solid;
 }
 
-@media (max-width: 343px){
+@media (max-width: 343px) {
     .insta__title__bold {
         margin: 0 0;
         font-size: 20px;
@@ -668,7 +668,7 @@ footer {
     line-height: 12px;
 }
 
-.footer__about__phone, .footer__about__email{
+.footer__about__phone, .footer__about__email {
     font-family: Roboto;
     color: white;
     font-size: 14px;
