@@ -90,6 +90,14 @@
                         selected="selected"><?php echo $limits['text']; ?></option>
                 <?php } else { ?>
                 <option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
+                    <div class="col-sm-3 text-left">
+                        <div class="product_grid__pagination__wrapper">
+                          <div>
+                            <?php echo $page_text ?>:
+                          </div>
+                          <?php echo $pagination ?>
+                        </div>
+                    </div>
                 <?php } ?>
                 <?php } ?>
               </select>
@@ -102,7 +110,6 @@
           <?php } ?>
         </div>
         <div class="row">
-          <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
           <div class="col-sm-6 text-right"><?php echo $results; ?></div>
         </div>
         <?php } ?>
