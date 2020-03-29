@@ -624,6 +624,30 @@ body {
     }
 }
 
+/*pagination*/
+
+.pagination {
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+}
+
+.pagination li a{
+    border: 0;
+    background: transparent;
+    color: black;
+}
+
+.pagination_active > a{
+    background-color: #00D3FE !important;
+    border-radius: 0 !important;
+    color: white !important;
+}
+
+.pagination_active {
+    border-radius: 0 !important;
+}
+
 /*footer*/
 
 footer {
