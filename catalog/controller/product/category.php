@@ -355,7 +355,6 @@ class ControllerProductCategory extends Controller {
 
 			$data['pagination'] = $pagination->render();
 			$data['page_text'] = $this->language->get('page');
-			$data['view_text'] = $this->language->get('view_text');
 
 			$data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($product_total - $limit)) ? $product_total : ((($page - 1) * $limit) + $limit), $product_total, ceil($product_total / $limit));
 
