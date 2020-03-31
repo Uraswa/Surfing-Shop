@@ -656,9 +656,11 @@ body {
     }
 }
 
+
+
 @media (max-width: 486px) {
     .products_grid__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
 
@@ -711,6 +713,12 @@ body {
     background-image: url("/image/catalog/arrow-down.png");
     min-width: 50px;
 
+}
+
+@media (max-width: 768px) {
+    .select_module > select {
+        background: white;
+    }
 }
 
 /*footer*/

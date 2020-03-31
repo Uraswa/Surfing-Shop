@@ -51,13 +51,13 @@
                 <?php } ?>
                 <?php } ?>
                 <?php if ($products) { ?>
-
                 <div id="products_grid__search">
                     <div class="row products_grid__search" id="products_grid__search"
                          style="<?php echo $categories ? '' : 'margin-top: 56px'?>">
-                        <div class="col-md-4 col-xs-6">
+                        <div class="col-sm-6 col-md-4 col-xs-6">
                             <div class="select_module" style="">
-                                <label style="margin-right: 10px;" for="input-sort"><?php echo $text_sort; ?></label>
+                                <label class="input-sort-label" style="margin-right: 10px;"
+                                       for="input-sort"><?php echo $text_sort; ?></label>
                                 <select id="input-sort" onchange="location = this.value;">
                                     <?php foreach ($sorts as $sorts) { ?>
                                     <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
@@ -77,13 +77,13 @@
                             <div class="btn-group btn-group-sm">
                                 <button type="button" class="btn btn-default list-view" data-toggle="tooltip"
                                         title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
-                                <button type="button"  class="btn btn-default grid-view" data-toggle="tooltip"
+                                <button type="button" class="btn btn-default grid-view" data-toggle="tooltip"
                                         title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
                             </div>
                         </div>
 
                     </div>
-                    <div class="col-md-3 col-xs-6">
+                    <div class="col-sm-6 col-md-3 col-xs-6">
                         <div class="select_module">
                             <label for="input-limit"><?php echo $text_limit; ?></label>
                             <select id="input-limit" onchange="location = this.value;">
@@ -98,7 +98,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-3 text-left">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="product_grid__pagination__wrapper">
                             <div>
                                 <?php echo $pagination ? $page_text . ':' : '' ?>
@@ -106,25 +106,24 @@
                             <?php echo $pagination ?>
                         </div>
                     </div>
-            </div>
+                </div>
             </div>
             <?php } ?>
             <div class="products_grid">
                 <?php foreach ($products as $product) { ?>
-                    <div><?php echo $product ?></div>
+                <div><?php echo $product ?></div>
                 <?php } ?>
             </div>
             <?php if ($products) { ?>
-
             <div id="products_grid_search2">
             </div>
             <?php } ?>
             <?php if (!$categories && !$products) { ?>
-                <p><?php echo $text_empty; ?></p>
-                <div class="buttons">
-                    <div class="pull-right"><a href="<?php echo $continue; ?>"
-                                               class="btn btn-primary"><?php echo $button_continue; ?></a></div>
-                </div>
+            <p><?php echo $text_empty; ?></p>
+            <div class="buttons">
+                <div class="pull-right"><a href="<?php echo $continue; ?>"
+                                           class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+            </div>
             <?php } ?>
         </div>
         <?php echo $column_right; ?></div>
