@@ -170,11 +170,10 @@ $(document).ready(function() {
 	});
 
 	// Product List
-	$('#list-view').click(function() {
+	$('.list-view').click(function() {
 		$('.products_grid').removeClass('products_grid__grid');
-		$('#grid-view').removeClass('active');
-		$('#list-view').addClass('active');
-
+		$('.grid-view').removeClass('active');
+		$('.list-view').addClass('active');
 		localStorage.setItem('display', 'list');
 	});
 
@@ -184,20 +183,20 @@ $(document).ready(function() {
 	});
 
 	// Product Grid
-	$('#grid-view').click(function() {
+	$('.grid-view').click(function() {
 
 		$('.products_grid').addClass('products_grid__grid');
 
-		$('#list-view').removeClass('active');
-		$('#grid-view').addClass('active');
+		$('.list-view').removeClass('active');
+		$('.grid-view').addClass('active');
 
 		localStorage.setItem('display', 'grid');
 	});
 
 	if (localStorage.getItem('display') == 'list') {
-		$('#list-view').trigger('click');
+		$('.list-view').trigger('click');
 	} else {
-		$('#grid-view').trigger('click');
+		$('.grid-view').trigger('click');
 	}
 
 	// Checkout

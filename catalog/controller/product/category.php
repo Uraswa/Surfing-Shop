@@ -1,6 +1,7 @@
 <?php
 class ControllerProductCategory extends Controller {
 	public function index() {
+        $this->document->addScript('catalog/view/javascript/products_grid_search.js');
 		$this->load->language('product/category');
 
 		$this->load->model('catalog/category');
