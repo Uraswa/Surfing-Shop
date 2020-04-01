@@ -485,6 +485,12 @@ class ControllerProductProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+			$data['userinfo'] = $this->load->controller('common/userinfo');
+			$data['menu'] = $this->load->controller('common/menu');
+			$data['category_options'] = $this->load->controller('product/category_options');
+			$data['manufacturer_left_list'] = $this->load->controller('product/manufacturer_left_list');
+			$data['open'] = $this->load->controller('common/open');
+			$data['social_links'] = $this->load->controller('common/social_links');
 
 			$this->response->setOutput($this->load->view('product/product', $data));
 		} else {
