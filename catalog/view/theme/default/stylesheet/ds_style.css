@@ -720,6 +720,10 @@ body {
     margin-bottom: 10px;
 }
 
+@media(max-width: 486px){
+    
+}
+
 /*pagination*/
 
 .pagination {
