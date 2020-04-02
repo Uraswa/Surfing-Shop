@@ -117,6 +117,8 @@
                                                 class="fa fa-star-o fa-stack-1x" style="color: black"></i></span>
                                     <?php } ?>
                                     <?php } ?>
+                                    <a href="" class="text-dark"
+                                       onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a>
                                 </p>
                             </div>
                             <?php } ?>
