@@ -137,7 +137,8 @@
                                     <?php } ?>
                                 </div>
                                 <div>
-                                    <?php echo $text_model; ?> <?php echo $model; ?>
+                                    <div style="margin-bottom: 5px"><?php echo $text_model; ?> <?php echo $model; ?></div>
+                                    <?php echo $text_stock; ?> <?php echo $stock; ?>
                                 </div>
                             </div>
                         </div>
