@@ -52,8 +52,9 @@
 
                         <div class="owl-carousel owl-theme" id="product__image">
                             <?php if ($thumb) { ?>
-                            <div class="product__img"><img src="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"
-                                      alt="<?php echo $heading_title; ?>"/></div>
+                            <div class="product__img"><img src="<?php echo $popup; ?>"
+                                                           title="<?php echo $heading_title; ?>"
+                                                           alt="<?php echo $heading_title; ?>"/></div>
                             <?php } ?>
                             <?php if ($images) { ?>
                             <?php foreach ($images as $index => $image) { ?>
@@ -67,7 +68,7 @@
                         <div class="container-fluid">
                             <div class="row product__thumbs__carousel_wrapper">
                                 <div class="col-xs-2 col-sm-2 col-md-1 product__thumbs__carousel__btn back">
-                                    <img  src="image/catalog/arrow-left-big.png" alt="">
+                                    <img src="image/catalog/arrow-left-big.png" alt="">
                                 </div>
                                 <div class="col-xs-8 col-sm-8 col-md-10">
                                     <div class="owl-carousel owl-theme" id="product__images" style="">
@@ -90,7 +91,7 @@
                                 </div>
                                 <div class="col-xs-2 col-sm-2 col-md-1 product__thumbs__carousel__btn">
                                     <div class="" style="display: flex; justify-content: flex-end">
-                                        <img  src="image/catalog/arrow-right-big.png" alt="">
+                                        <img src="image/catalog/arrow-right-big.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -111,22 +112,29 @@
                                 <p>
                                     <?php for ($i = 1; $i <= 5; $i++) { ?>
                                     <?php if ($rating < $i) { ?>
-                                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x" ></i></span>
+                                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
                                     <?php } else { ?>
-                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x" style="color: black"></i><i
+                                    <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"
+                                                                 style="color: black"></i><i
                                                 class="fa fa-star-o fa-stack-1x" style="color: black"></i></span>
                                     <?php } ?>
                                     <?php } ?>
                                     <a href="" class="text-dark"
                                        onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a>
                                     <span class="text-dark">/</span> <a class="text-dark" href=""
-                                         onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a>
+                                                                        onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a>
                                 </p>
                             </div>
                             <?php } ?>
                             <div class="product__info__sale_info">
                                 <div>
-                                    
+                                    <?php if ($price) { ?>
+                                        <?php if (!$special) { ?>
+                                            <h2 style="margin-top: 0px"><?php echo $price; ?></h2>
+                                        <?php } else { ?>
+                                            <h2 style="margin-top: 0px"><?php echo $special; ?></h2>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </div>
                                 <div>
 
