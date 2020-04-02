@@ -106,6 +106,11 @@
                     <div class="<?php echo $class; ?>">
                         <div class="product_info">
                             <h2 class="product_info__title"><?php echo $heading_title ?></h2>
+                            <?php if ($review_status) { ?>
+                            <div class="rating">
+                                
+                            </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
