@@ -137,7 +137,7 @@
                                     <?php } ?>
                                 </div>
                                 <div>
-
+                                    <?php echo $text_model; ?> <?php echo $model; ?>
                                 </div>
                             </div>
                         </div>
