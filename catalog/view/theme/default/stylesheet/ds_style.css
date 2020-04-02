@@ -706,7 +706,10 @@ body {
 
 /*product info*/
 
-
+.product_info {
+    font-family: Roboto;
+    font-weight: 400;
+}
 
 /*pagination*/
 
