@@ -119,6 +119,8 @@
                                     <?php } ?>
                                     <a href="" class="text-dark"
                                        onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a>
+                                    <span class="text-dark">/</span> <a class="text-dark" href=""
+                                         onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a>
                                 </p>
                             </div>
                             <?php } ?>
