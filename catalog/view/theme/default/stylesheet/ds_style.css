@@ -720,6 +720,16 @@ body {
     margin-bottom: 0;
 }
 
+/*product rating*/
+
+.rating > p {
+    margin-bottom: 0;
+}
+
+.rating {
+    margin-bottom: 30px;
+}
+
 @media(max-width: 486px){
     .product_info__title {
         margin-top: 15px;
