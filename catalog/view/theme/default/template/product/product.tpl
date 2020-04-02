@@ -124,6 +124,9 @@
                                 </p>
                             </div>
                             <?php } ?>
+                            <div class="product__info__sale_info">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
