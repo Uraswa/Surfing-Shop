@@ -721,7 +721,9 @@ body {
 }
 
 @media(max-width: 486px){
-    
+    .product_info__title {
+        margin-top: 15px;
+    }
 }
 
 /*pagination*/
