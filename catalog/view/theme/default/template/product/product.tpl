@@ -105,7 +105,7 @@
                     <?php } ?>
                     <div class="<?php echo $class; ?>">
                         <div class="product_info">
-                            
+                            <h2 class="product_info__title"><?php echo $heading_title ?></h2>
                         </div>
                     </div>
                 </div>
