@@ -725,6 +725,10 @@ body {
     justify-content: space-between;
 }
 
+.product_info__divider {
+    padding-left: 31px;
+}
+
 /*product rating*/
 
 .rating > p {

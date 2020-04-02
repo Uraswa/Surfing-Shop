@@ -141,6 +141,7 @@
                                     <?php echo $text_stock; ?> <?php echo $stock; ?>
                                 </div>
                             </div>
+                            <div class="product_info__divider"><hr></div>
                         </div>
                     </div>
                 </div>
