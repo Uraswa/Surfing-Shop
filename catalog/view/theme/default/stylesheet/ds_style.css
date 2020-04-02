@@ -717,7 +717,7 @@ body {
     color: #323232;
     text-transform: uppercase;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 @media(max-width: 486px){
