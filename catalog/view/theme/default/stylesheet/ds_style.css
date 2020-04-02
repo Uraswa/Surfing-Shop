@@ -720,6 +720,11 @@ body {
     margin-bottom: 0;
 }
 
+.product__info__sale_info {
+    display: flex;
+    justify-content: space-between;
+}
+
 /*product rating*/
 
 .rating > p {
