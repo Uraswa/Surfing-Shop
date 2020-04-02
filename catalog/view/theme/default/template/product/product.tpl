@@ -104,7 +104,9 @@
                     <?php $class = 'col-sm-4'; ?>
                     <?php } ?>
                     <div class="<?php echo $class; ?>">
-                        
+                        <div class="product_info">
+                            
+                        </div>
                     </div>
                 </div>
                 <ul class="nav nav-tabs">
