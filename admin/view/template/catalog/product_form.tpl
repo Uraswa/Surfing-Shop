@@ -59,6 +59,16 @@
                     </div>
                   </div>
                   <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-overview<?php echo $language['language_id']; ?>">Overview</label>
+                    <div class="col-sm-10">
+                      <textarea maxlength="1000" name="product_description[<?php echo $language['language_id']; ?>][overview]" placeholder="Overview" id="input-overview<?php echo $language['language_id']; ?>" data-lang="<?php echo $lang; ?>" class="form-control"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['overview'] : ''; ?></textarea>
+                      <?php if (isset($error_overview[$language['language_id']])) { ?>
+                      <div class="text-danger"><?php echo $error_overview[$language['language_id']]; ?></div>
+                      <?php } ?>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>
                     <div class="col-sm-10">
                       <textarea name="product_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description; ?>" id="input-description<?php echo $language['language_id']; ?>" data-lang="<?php echo $lang; ?>" class="form-control summernote"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['description'] : ''; ?></textarea>
