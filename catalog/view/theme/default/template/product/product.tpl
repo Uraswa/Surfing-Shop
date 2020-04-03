@@ -142,6 +142,14 @@
                                 </div>
                             </div>
                             <div class="product_info__divider"><hr></div>
+                            <div class="product_info__quick_overview">
+                                <div class="product_info__quick_overview__title">
+
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                            <div class="product_info__divider"><hr></div>
                         </div>
                     </div>
                 </div>

@@ -729,6 +729,16 @@ body {
     padding-left: 31px;
 }
 
+.product_info__quick_overview {
+    padding-bottom: 20px;
+}
+
+.product_info__quick_overview__title {
+    font-size: 12px;
+    color: black;
+    text-transform: uppercase;
+}
+
 /*product rating*/
 
 .rating > p {
