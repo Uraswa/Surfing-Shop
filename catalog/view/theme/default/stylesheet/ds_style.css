@@ -739,6 +739,12 @@ body {
     text-transform: uppercase;
 }
 
+.product_info__quick_overview__text {
+    line-height: 16px;
+    font-size: 12px;
+    color: #717171;
+}
+
 /*product rating*/
 
 .rating > p {
