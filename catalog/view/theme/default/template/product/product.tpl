@@ -144,7 +144,7 @@
                             <div class="product_info__divider"><hr></div>
                             <div class="product_info__quick_overview">
                                 <div class="product_info__quick_overview__title">
-
+                                    <?php echo $text_overview ?>
                                 </div>
                                 <div class="product_info__quick_overview__text">
                                     <?php echo $overview ?>
