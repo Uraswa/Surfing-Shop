@@ -729,6 +729,11 @@ body {
     padding-left: 31px;
 }
 
+.product_info__divider > hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .product_info__quick_overview {
     padding-bottom: 20px;
 }
