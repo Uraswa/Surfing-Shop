@@ -750,6 +750,42 @@ body {
     color: #717171;
 }
 
+/*product options select*/
+
+.product__options__select {
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: black;
+    padding-bottom: 17px;
+    padding-top: 10px;
+}
+
+.product__options__select__title {
+    margin-bottom: 12px;
+    padding-left: 5px;
+}
+
+.product__options__select__options {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: auto !important;
+    justify-content: space-between;
+}
+
+.product__options__select__options div {
+    padding: 10px 7px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    flex: 1 1 auto;
+    margin: 5px;
+}
+
+.product__options__select__options div:hover, .product__options__select__options div.selected {
+    color: var(--red)
+}
+
 /*product rating*/
 
 .rating > p {
