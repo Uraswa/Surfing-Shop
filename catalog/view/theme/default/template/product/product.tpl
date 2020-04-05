@@ -130,9 +130,9 @@
                                 <div>
                                     <?php if ($price) { ?>
                                     <?php if (!$special) { ?>
-                                    <h2 style="margin-top: 0px"><?php echo $price; ?></h2>
+                                    <h2 style="margin-top: 0px" class="product__info__sale_info__price"><?php echo $price; ?></h2>
                                     <?php } else { ?>
-                                    <h2 style="margin-top: 0px"><?php echo $special; ?></h2>
+                                    <h2 style="margin-top: 0px" class="product__info__sale_info__price"><?php echo $special; ?></h2>
                                     <?php } ?>
                                     <?php } ?>
                                 </div>

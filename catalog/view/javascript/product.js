@@ -40,13 +40,21 @@ $(document).ready(function () {
     //product options
     $('.product__options__select__options div').on('click', function () {
         const select = $(this).parent().prev();
+        let previous = 0;
         if (!select.attr('multiple')) {
-            $(this).parent().find(`.selected[value!=${$(this).attr('value')}]`).removeClass('selected')
+            const selectedItem = $(this).parent().find(`.selected[value!=${$(this).attr('value')}]`).removeClass('selected');
+            if (selectedItem.attr('money')){
+                previous = selectedItem.attr('money').split(' ')[0];
+            }
         }
+        let [digit, currency] = $(this).attr('money').split(' ');
+        let [digit1] = $('.product__info__sale_info__price').text().split(' ');
         if ($(this).toggleClass('selected').hasClass('selected')) {
             select.val(select.attr('multiple') ? [$(this).attr('value'), ...(select.val() || [])] : $(this).attr('value'));
+            $('.product__info__sale_info__price').text((+digit + +digit1 - previous).toFixed(2) + ' ' + currency);
         } else {
             select.val(select.attr('multiple') ? select.val().filter(v => v !== $(this).attr('value')) : []);
+            $('.product__info__sale_info__price').text((digit1 - digit).toFixed(2) + ' ' + currency);
         }
     });
 });
