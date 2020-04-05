@@ -46,7 +46,7 @@ $(document).ready(function () {
         if ($(this).toggleClass('selected').hasClass('selected')) {
             select.val(select.attr('multiple') ? [$(this).attr('value'), ...(select.val() || [])] : $(this).attr('value'));
         } else {
-            select.val(!select.attr('multiple') ? [] : select.val().filter(v => v !== $(this).attr('value')));
+            select.val(select.attr('multiple') ? select.val().filter(v => v !== $(this).attr('value')) : []);
         }
     });
 });
