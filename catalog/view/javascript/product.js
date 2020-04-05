@@ -34,6 +34,19 @@ $(document).ready(function () {
 
     $('.product__thumbs__carousel__btn').on('click', function () {
         console.log('f');
-        $('#product__images').trigger(($(this).hasClass('back') ? 'prev': 'next') + '.owl.carousel');
+        $('#product__images').trigger(($(this).hasClass('back') ? 'prev' : 'next') + '.owl.carousel');
+    });
+
+    //product options
+    $('.product__options__select__options div').on('click', function () {
+        const select = $(this).parent().prev();
+        if (!select.attr('multiple')) {
+            $(this).parent().find(`.selected[value!=${$(this).attr('value')}]`).removeClass('selected')
+        }
+        if ($(this).toggleClass('selected').hasClass('selected')) {
+            select.val(select.attr('multiple') ? [$(this).attr('value'), ...(select.val() || [])] : $(this).attr('value'));
+        } else {
+            select.val(!select.attr('multiple') ? [] : select.val().filter(v => v !== $(this).attr('value')));
+        }
     });
 });
