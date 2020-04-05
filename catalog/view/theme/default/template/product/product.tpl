@@ -163,6 +163,7 @@
                             <?php foreach ($options as $option) { ?>
                             <?php if ($option['type'] == 'select') { ?>
                             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+
                                 <label class="control-label"
                                        for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
                                 <select name="option[<?php echo $option['product_option_id']; ?>]"
@@ -204,6 +205,9 @@
                                     </div>
                                     <?php } ?>
                                 </div>
+                            </div>
+                            <div class="product__options__select">
+                                
                             </div>
                             <?php } ?>
                             <?php if ($option['type'] == 'checkbox') { ?>
