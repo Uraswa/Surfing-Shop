@@ -181,7 +181,9 @@
                                     <div  money="<?php
                                         if ($option_value['price']) {
                                             echo $option_value['price'];
-                                         }
+                                        } else {
+                                            echo 0;
+                                        }
                                      ?>" value="<?php echo $option_value['product_option_value_id']; ?>">
                                         <?php echo $option_value['name']; ?>
                                     </div>

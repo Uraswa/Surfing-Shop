@@ -47,8 +47,8 @@ $(document).ready(function () {
                 previous = selectedItem.attr('money').split(' ')[0];
             }
         }
-        let [digit, currency] = $(this).attr('money').split(' ');
-        let [digit1] = $('.product__info__sale_info__price').text().split(' ');
+        let [digit] = $(this).attr('money').split(' ');
+        let [digit1, currency] = $('.product__info__sale_info__price').text().split(' ');
         if ($(this).toggleClass('selected').hasClass('selected')) {
             select.val(select.attr('multiple') ? [$(this).attr('value'), ...(select.val() || [])] : $(this).attr('value'));
             $('.product__info__sale_info__price').text((+digit + +digit1 - previous).toFixed(2) + ' ' + currency);
