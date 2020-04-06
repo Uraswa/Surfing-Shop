@@ -818,6 +818,16 @@ body {
     font-size: 15px;
 }
 
+.product__options__bottom__submit {
+    border: 0;
+    background: var(--red);
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 131px;
+    height: 50px;
+}
+
 /*product rating*/
 
 .rating > p {
