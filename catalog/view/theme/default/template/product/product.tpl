@@ -165,7 +165,7 @@
                                 <div class="product__options__select__title">
                                     <?php echo $option['name']; ?>
                                 </div>
-                                <select <?php echo $option['type'] == 'checkbox' ? 'multiple' : '' ?> hidden name="option[<?php echo $option['product_option_id']; ?>]">
+                                <select class="product__options__select__select product__options__select__field" <?php echo $option['type'] == 'checkbox' ? 'multiple' : '' ?> hidden name="option[<?php echo $option['product_option_id']; ?>]">
                                     <?php foreach ($option['product_option_value'] as $option_value) { ?>
                                     <option value="<?php echo $option_value['product_option_value_id']; ?>">
                                         <?php echo $option_value['name']; ?>
@@ -201,7 +201,7 @@
                                 <textarea name="option[<?php echo $option['product_option_id']; ?>]" rows="5"
                                           placeholder="<?php echo $option['name']; ?>"
                                           id="input-option<?php echo $option['product_option_id']; ?>"
-                                          class="form-control"><?php echo $option['value']; ?></textarea>
+                                          class="form-control product__options__select__field"><?php echo $option['value']; ?></textarea>
                             </div>
                             <?php } ?>
                             <?php if ($option['type'] == 'file') { ?>
@@ -211,7 +211,7 @@
                                         data-loading-text="<?php echo $text_loading; ?>"
                                         class="btn btn-default btn-block">
                                     <i class="fa fa-upload"></i> <?php echo $button_upload; ?></button>
-                                <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value=""
+                                <input class="product__options__select__field" type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value=""
                                        id="input-option<?php echo $option['product_option_id']; ?>"/>
                             </div>
                             <?php } ?>
@@ -223,7 +223,7 @@
                                     <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option['value']; ?>" data-date-format="YYYY-MM-DD"
                                            id="input-option<?php echo $option['product_option_id']; ?>"
-                                           class="form-control"/>
+                                           class="form-control product__options__select__field"/>
                                     <span class="input-group-btn">
                 <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
                 </span></div>
@@ -237,7 +237,7 @@
                                     <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option['value']; ?>" data-date-format="YYYY-MM-DD HH:mm"
                                            id="input-option<?php echo $option['product_option_id']; ?>"
-                                           class="form-control"/>
+                                           class="form-control product__options__select__field"/>
                                     <span class="input-group-btn">
                 <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                 </span></div>
@@ -251,7 +251,7 @@
                                     <input type="text" name="option[<?php echo $option['product_option_id']; ?>]"
                                            value="<?php echo $option['value']; ?>" data-date-format="HH:mm"
                                            id="input-option<?php echo $option['product_option_id']; ?>"
-                                           class="form-control"/>
+                                           class="form-control product__options__select__field"/>
                                     <span class="input-group-btn">
                 <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                 </span></div>
@@ -259,6 +259,33 @@
                             <?php } ?>
                             <?php } ?>
                             <?php } ?>
+                            <?php if ($recurrings) { ?>
+                            <hr>
+                            <h3><?php echo $text_payment_recurring; ?></h3>
+                            <div class="form-group required">
+                                <select name="recurring_id" class="form-control product__options__select__field">
+                                    <option value=""><?php echo $text_select; ?></option>
+                                    <?php foreach ($recurrings as $recurring) { ?>
+                                    <option value="<?php echo $recurring['recurring_id']; ?>"><?php echo $recurring['name']; ?></option>
+                                    <?php } ?>
+                                </select>
+                                <div class="help-block" id="recurring-description"></div>
+                            </div>
+                            <?php } ?>
+                            <div class="form-group">
+                                <label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label>
+                                <input type="text" name="quantity" value="<?php echo $minimum; ?>" size="2"
+                                       id="input-quantity" class="form-control product__options__select__field"/>
+                                <input class="product__options__select__field" type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
+                                <br/>
+                                <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>"
+                                        class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button>
+                            </div>
+                            <?php if ($minimum > 1) { ?>
+                            <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?>
+                            </div>
+                            <?php } ?>
+
                         </div>
                     </div>
                 </div>
@@ -458,7 +485,7 @@
                 $.ajax({
                     url: 'index.php?route=checkout/cart/add',
                     type: 'post',
-                    data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+                    data: $('.product__options__select__field, .product__options__select__select'),
                     dataType: 'json',
                     beforeSend: function () {
                         $('#button-cart').button('loading');
