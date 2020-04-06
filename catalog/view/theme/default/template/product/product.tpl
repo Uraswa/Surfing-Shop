@@ -274,11 +274,7 @@
                                 <div class="help-block" id="recurring-description"></div>
                             </div>
                             <?php } ?>
-                            <div class="form-group">
-                                <label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label>
-                                <input class="product__options__select__field" type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
-                                <br/>
-                            </div>
+                            <input class="product__options__select__field" type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
                             <div class="product__options__bottom">
                                 <div class="product__options__bottom__quantity">
                                     <label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label> <br>
