@@ -797,9 +797,11 @@ body {
 
 .product__options__bottom {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     font-family: Roboto;
 }
+
 
 .product__options__bottom__quantity > input, .product__options__bottom__quantity > button{
     width: 23px;
@@ -826,6 +828,19 @@ body {
     text-transform: uppercase;
     width: 131px;
     height: 50px;
+}
+
+.product__options__bottom__links ul {
+    list-style: none;
+    font-size: 11px;
+    color: black;
+    padding-left: 0;
+}
+
+
+.product__options__bottom__links ul > li:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /*product rating*/

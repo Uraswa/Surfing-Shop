@@ -290,7 +290,9 @@
                                 </button>
                                 <div class="product__options__bottom__links">
                                     <ul>
-
+                                        <li onclick="wishlist.add('<?php echo $product_id; ?>');">+ <?php echo $button_wishlist; ?></li>
+                                        <li onclick="compare.add('<?php echo $product_id; ?>');">+ <?php echo $button_compare; ?></li>
+                                        <li >+ Email to your friend</li>
                                     </ul>
                                 </div>
                             </div>
