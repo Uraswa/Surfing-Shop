@@ -481,6 +481,13 @@
             });
             //--></script>
         <script type="text/javascript"><!--
+
+            function updateCart(json){
+                const regEx = RegExp(/([^-]+)- (.+)/gm);
+                const [_, amount, price] = regEx.exec(json['total']);
+                $('.cart__price').html(price);
+                $('.cart__items').html(amount);
+            }
             $('#button-cart').on('click', function () {
                 $.ajax({
                     url: 'index.php?route=checkout/cart/add',
@@ -519,10 +526,10 @@
                         }
 
                         if (json['success']) {
+                            console.log(json);
                             $('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-                            $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-
+                            updateCart(json);
                             $('html, body').animate({scrollTop: 0}, 'slow');
 
                             $('#cart > ul').load('index.php?route=common/cart/info ul li');
