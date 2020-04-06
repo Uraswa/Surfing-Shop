@@ -57,4 +57,9 @@ $(document).ready(function () {
             $('.product__info__sale_info__price').text((digit1 - digit).toFixed(2) + ' ' + currency);
         }
     });
+
+    $('.product__options__bottom__quantity__btn').on('click', function () {
+       const input = $(`#input-quantity`);
+       input.val(+input.val() < 99 ? +input.val() + 1 : 99);
+    });
 });

@@ -276,16 +276,16 @@
                             <?php } ?>
                             <div class="form-group">
                                 <label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label>
-                                <input type="text" name="quantity" value="<?php echo $minimum; ?>" size="2"
-                                       id="input-quantity" class="form-control product__options__select__field"/>
                                 <input class="product__options__select__field" type="hidden" name="product_id" value="<?php echo $product_id; ?>"/>
                                 <br/>
                                 <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>"
-                                        class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button>
+                                        class="btn btn-primary btn-lg btn-block" ><?php echo $button_cart; ?></button>
                             </div>
                             <div class="product__options__bottom">
                                 <div class="product__options__bottom__quantity">
-                                    
+                                    <label class="control-label" for="input-quantity"><?php echo $entry_qty; ?></label> <br>
+                                    <input maxlength="2" minlength="1" id="input-quantity" name="quantity" value="<?php echo $minimum; ?>" class="product__options__select__field" type="text">
+                                    <button class="product__options__bottom__quantity__btn">+</button>
                                 </div>
                                 <button class="product__options__bottom__submit">
 

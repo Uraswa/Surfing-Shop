@@ -798,6 +798,24 @@ body {
 .product__options__bottom {
     display: flex;
     justify-content: space-between;
+    font-family: Roboto;
+}
+
+.product__options__bottom__quantity > input, .product__options__bottom__quantity > button{
+    width: 23px;
+    height: 27px;
+    border: #EFEFEF 1px solid;
+}
+
+.product__options__bottom__quantity > input {
+    text-align: center;
+}
+
+.product__options__bottom__quantity > button {
+    border: 0 !important;
+    color: #D8D5D5;
+    background: transparent;
+    font-size: 15px;
 }
 
 /*product rating*/
