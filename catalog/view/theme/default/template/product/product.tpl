@@ -283,6 +283,19 @@
                                 <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>"
                                         class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button>
                             </div>
+                            <div class="product__options__bottom">
+                                <div class="product__options__bottom__quantity">
+                                    
+                                </div>
+                                <button class="product__options__bottom__submit">
+
+                                </button>
+                                <div class="product__options__bottom__links">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                            </div>
                             <?php if ($minimum > 1) { ?>
                             <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?>
                             </div>

@@ -793,6 +793,13 @@ body {
     color: var(--red)
 }
 
+/*product options bottom*/
+
+.product__options__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
 /*product rating*/
 
 .rating > p {
@@ -808,6 +815,8 @@ body {
         margin-top: 15px;
     }
 }
+
+
 
 /*pagination*/
 
