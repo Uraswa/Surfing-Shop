@@ -16,7 +16,9 @@
           echo $category_options;
           echo $manufacturer_left_list;
           echo $open;
+
         ?>
+
             </div>
             <?php if ($column_left && $column_right) { ?>
             <?php $class = 'col-sm-6'; ?>
@@ -532,7 +534,7 @@
                             updateCart(json);
                             $('html, body').animate({scrollTop: 0}, 'slow');
 
-                            $('#cart > ul').load('index.php?route=common/cart/info ul li');
+                            $('.cart > ul').load('index.php?route=common/cart/info ul li');
                         }
                     },
                     error: function (xhr, ajaxOptions, thrownError) {

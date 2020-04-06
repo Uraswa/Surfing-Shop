@@ -190,6 +190,13 @@ body {
     cursor: pointer;
 }
 
+.cart__dropdown__activator__btn {
+    display: block;
+    width: 100%;
+    border: 0;
+    background: transparent;
+}
+
 .cart__buttons div {
     display: flex;
     justify-content: center;

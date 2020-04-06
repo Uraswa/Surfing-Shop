@@ -241,13 +241,11 @@ var cart = {
 					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
 					// Need to set timeout otherwise it wont update the total
-					setTimeout(function () {
-						updateCart(json)
-					}, 100);
+					updateCart(json)
 
 					//$('html, body').animate({ scrollTop: 0 }, 'slow');
 
-					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+					$('.cart ul').load('index.php?route=common/cart/info ul li');
 				}
 			},
 			error: function(xhr, ajaxOptions, thrownError) {
@@ -269,14 +267,12 @@ var cart = {
 			},
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
-				setTimeout(function () {
-					updateCart(json)
-				}, 100);
+				updateCart(json)
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
 					location = 'index.php?route=checkout/cart';
 				} else {
-					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+					$('.cart > ul').load('index.php?route=common/cart/info ul li');
 				}
 			},
 			error: function(xhr, ajaxOptions, thrownError) {
@@ -298,16 +294,15 @@ var cart = {
 			},
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
-				setTimeout(function () {
-					updateCart(json)
-				}, 100);
+
+				updateCart(json);
 				
 				var now_location = String(document.location.pathname);
 
 				if ((now_location == '/cart/') || (now_location == '/checkout/') || (getURLVar('route') == 'checkout/cart') || (getURLVar('route') == 'checkout/checkout')) {
 					location = 'index.php?route=checkout/cart';
 				} else {
-					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+					$('.cart > ul').load('index.php?route=common/cart/info ul li');
 				}
 			},
 			error: function(xhr, ajaxOptions, thrownError) {
@@ -349,7 +344,7 @@ var voucher = {
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
 					location = 'index.php?route=checkout/cart';
 				} else {
-					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+					$('.cart  ul').load('index.php?route=common/cart/info ul li');
 				}
 			},
 			error: function(xhr, ajaxOptions, thrownError) {
