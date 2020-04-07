@@ -32,6 +32,7 @@ $_['text_month']                              = 'месяц';
 $_['text_year']                               = 'год';
 $_['text_overview']                           = 'Кратко';
 $_['text_recently']                           = 'вы смотрели:';
+$_['text_recommend']                          = 'Рекомендации';
 
 // Entry
 $_['entry_qty']                               = 'Кол-во';

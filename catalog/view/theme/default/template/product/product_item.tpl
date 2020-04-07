@@ -5,7 +5,7 @@
         </div>
         <div class="product__item__desc">
             <div class="product__item__desc__title">
-                <?php echo $model ?>
+                <?php echo $name ?>
             </div>
             <div class="product__item__desc__price">
                 <?php echo $special ?>

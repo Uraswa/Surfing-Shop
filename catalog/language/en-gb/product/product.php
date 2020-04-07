@@ -32,6 +32,7 @@ $_['text_month']               = 'month';
 $_['text_year']                = 'year';
 $_['text_overview']            = 'overview';
 $_['text_recently']            = 'recently viewed';
+$_['text_recommend']            = 'U\'d also like';
 
 // Entry
 $_['entry_qty']                = 'Qty';
