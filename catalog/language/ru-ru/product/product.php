@@ -31,6 +31,7 @@ $_['text_semi_month']                         = 'полмесяца';
 $_['text_month']                              = 'месяц';
 $_['text_year']                               = 'год';
 $_['text_overview']                           = 'Кратко';
+$_['text_recently']                           = 'вы смотрели:';
 
 // Entry
 $_['entry_qty']                               = 'Кол-во';

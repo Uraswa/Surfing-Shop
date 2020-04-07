@@ -31,6 +31,7 @@ $_['text_semi_month']          = 'half-month';
 $_['text_month']               = 'month';
 $_['text_year']                = 'year';
 $_['text_overview']            = 'overview';
+$_['text_recently']            = 'recently viewed';
 
 // Entry
 $_['entry_qty']                = 'Qty';

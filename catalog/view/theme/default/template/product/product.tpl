@@ -454,6 +454,7 @@
                     <?php } ?>
                     <?php $i++; ?>
                     <?php } ?>
+
                 </div>
                 <?php } ?>
                 <?php if ($tags) { ?>
@@ -467,7 +468,11 @@
                     <?php } ?>
                 </p>
                 <?php } ?>
-                <?php echo $content_bottom; ?></div>
+                <?php echo $content_bottom; ?>
+                <?php echo $recently_watched ?>
+            </div>
+
+
 
 
         </div>
@@ -685,6 +690,7 @@
                 }
             })
             //--></script>
+
         <?php echo $social_links ?>
     </div>
     <?php echo $footer; ?></div>

@@ -5,8 +5,24 @@ class ControllerProductProduct extends Controller {
 	public function index() {
 		$this->load->language('product/product');
 		$this->document->addScript('catalog/view/javascript/product.js');
+		$recently = [];
+		if (!isset($_COOKIE['recently'])) {
+           $recently = array();
+        } else {
+		    $recently = json_decode($_COOKIE['recently']);
+        }
+        $keys=array_keys($recently, $this->request->get['product_id']);
+		if ($keys){
+		    foreach ($keys as $key){
+		        unset($recently[$key]);
+            }
+        } else if (count($recently) >= 6) {
+            array_pop($recently);
+        }
+        array_unshift($recently, $this->request->get['product_id']);
+        setcookie('recently', json_encode($recently));
 
-		$data['breadcrumbs'] = array();
+        $data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
@@ -283,6 +299,13 @@ class ControllerProductProduct extends Controller {
 			$data['points'] = $product_info['points'];
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 			$data['overview'] = $product_info['overview'];
+
+			$recently_watched = [$product_info];
+			foreach (array_slice($recently, 1) as $product_id){
+			     $recently_watched[] = $this->model_catalog_product->getProduct($product_id);
+            }
+			$data['recently_watched'] = $this->load->controller('product/products_slider', ['products' => $recently_watched, 'title' => $this->language->get('text_recently')]);
+
 
 			if ($product_info['quantity'] <= 0) {
 				$data['stock'] = $product_info['stock_status'];
