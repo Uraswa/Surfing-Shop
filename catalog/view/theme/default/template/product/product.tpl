@@ -300,7 +300,7 @@
                         </div>
                     </div>
                 </div>
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs product__nav-tabs">
                     <li class="active"><a href="#tab-description"
                                           data-toggle="tab"><?php echo $tab_description; ?></a></li>
                     <?php if ($attribute_groups) { ?>

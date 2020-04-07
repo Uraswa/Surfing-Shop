@@ -843,6 +843,28 @@ body {
     cursor: pointer;
 }
 
+/*product tabs*/
+
+.product__nav-tabs {
+    padding-left: 20px;
+}
+
+.product__nav-tabs li {
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.product__nav-tabs > li.active {
+    background-color: var(--blue) !important;
+}
+
+.product__nav-tabs li > a {
+    color: black !important;
+    background: transparent !important;
+    border: none !important;
+}
+
 /*product rating*/
 
 .rating > p {
