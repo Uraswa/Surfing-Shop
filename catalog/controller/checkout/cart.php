@@ -6,6 +6,11 @@ class ControllerCheckoutCart extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$data['breadcrumbs'] = array();
+		$data['menu'] = $this->load->controller('common/menu');
+		$data['category_options'] = $this->load->controller('product/category_options');
+		$data['manufacturer_left_list'] = $this->load->controller('product/manufacturer_left_list');
+		$data['open'] = $this->load->controller('common/open');
+		$data['brands'] = $this->load->controller('common/brands');
 
 		$data['breadcrumbs'][] = array(
 			'href' => $this->url->link('common/home'),
