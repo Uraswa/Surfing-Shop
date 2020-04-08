@@ -19,11 +19,14 @@
             </div>
 
             <div class="col-sm-9" style="background:#F8F8F8;">
-                <ul class="breadcrumb">
-                    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-                    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-                    <?php } ?>
-                </ul>
+                <!--
+                    <ul class="breadcrumb">
+                        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+                        <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+                        <?php } ?>
+                    </ul>
+                !-->
+                <?php echo $order_path ?>
                 <?php if ($attention) { ?>
                 <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $attention; ?>
                     <button type="button" class="close" data-dismiss="alert">&times;</button>

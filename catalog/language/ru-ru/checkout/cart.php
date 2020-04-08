@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']            = 'Корзина покупок';
+$_['heading_title']            = 'Корзина';
 
 // Text
 $_['text_success']             = 'Товар <a href="%s">%s</a> добавлен в вашу <a href="%s">корзину</a>!';
@@ -25,6 +25,8 @@ $_['text_payment_recurring']   = 'Профиль платежа';
 $_['text_trial_description']   = '%s каждый %d %s(s) для %d платежа(ей) тогда';
 $_['text_payment_description'] = '%s каждый %d %s(s) для %d платежа(ей)';
 $_['text_payment_cancel']      = '%s каждый %d %s(s) пока не будет отменено';
+$_['text_checkout']            = 'заказ';
+$_['text_confirm']             = 'подтверждение';
 
 // Column
 $_['column_image']           = 'Изображение';
