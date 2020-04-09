@@ -917,6 +917,38 @@ body {
     color: var(--red);
 }
 
+/*cart table*/
+
+.cart__table {
+    border: none;
+    font-family: Roboto;
+}
+
+.cart__table > thead, .cart__table > thead > tr, .cart__table > thead > tr > td {
+    font-size: 12px;
+    border: none;
+    font-weight: 600;
+    text-align: center;
+}
+
+.cart__table > thead {
+    border-bottom: 1px #E7E7E7 solid;
+}
+
+.product__row > td {
+    border: none !important;
+    font-size: 13px !important;
+}
+
+
+.product__row__info {
+   }
+
+.product__row__info__img {
+    float: left;
+    margin-right: 10px;
+}
+
 @media (max-width: 962px) {
     .order_path__step {
         font-size: 16px;
