@@ -27,6 +27,11 @@ $_['text_payment_description'] = '%s every %d %s(s) for %d payment(s)';
 $_['text_payment_cancel']      = '%s every %d %s(s) until canceled';
 $_['text_checkout']            = 'checkout';
 $_['text_confirm']             = 'confirmation';
+$_['text_total']               = 'order total';
+$_['text_var']                 = 'var';
+$_['text_your_cart']           = 'your cart';
+$_['text_order']               = 'checkout';
+$_['text_review']              = 'review your cart';
 
 // Column
 $_['column_image']             = 'Image';

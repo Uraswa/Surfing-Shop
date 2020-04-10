@@ -128,7 +128,13 @@
                                 </form>
                             </div>
                             <div class="col-xs-12 col-md-4">
-                                123
+                                <div class="cart__block">
+                                    <div class="cart__block__review"><?php echo $text_review ?></div>
+                                    <div class="cart__block__row"><div><?php echo $text_your_cart ?></div><div><?php echo $cart_price ?></div></div>
+                                    <div class="cart__block__row"><div><?php echo $text_var ?></div><div><?php echo $taxes ?></div></div>
+                                    <div class="cart__block__row"><div><?php echo $text_total ?></div><div><?php echo $total ?></div></div>
+                                    <a href="<?php echo $checkout ?>" class="cart__block__checkout"><?php echo $text_order; ?></a>
+                                </div>
                             </div>
                         </div>
 
@@ -142,18 +148,6 @@
                         </div>
                         <?php } ?>
                         <br/>
-                        <div class="row">
-                            <div class="col-sm-4 col-sm-offset-8">
-                                <table class="table table-bordered">
-                                    <?php foreach ($totals as $total) { ?>
-                                    <tr>
-                                        <td class="text-right"><strong><?php echo $total['title']; ?>:</strong></td>
-                                        <td class="text-right"><?php echo $total['text']; ?></td>
-                                    </tr>
-                                    <?php } ?>
-                                </table>
-                            </div>
-                        </div>
                         <div class="buttons clearfix">
                             <div class="pull-left"><a href="<?php echo $continue; ?>"
                                                       class="btn btn-default"><?php echo $button_shopping; ?></a></div>

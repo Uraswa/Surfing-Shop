@@ -41,6 +41,8 @@ class ControllerCheckoutCart extends Controller {
 			$data['button_remove'] = $this->language->get('button_remove');
 			$data['button_shopping'] = $this->language->get('button_shopping');
 			$data['button_checkout'] = $this->language->get('button_checkout');
+			$data['text_order'] = $this->language->get('text_order');
+			$data['text_review'] = $this->language->get('text_review');
 
 			if (!$this->cart->hasStock() && (!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning'))) {
 				$data['error_warning'] = $this->language->get('error_stock');
@@ -231,9 +233,15 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			$data['totals'] = array();
+			$data['cart_price'] = $this->currency->format($totals[0]['value'], $this->session->data['currency']);
+			$data['taxes'] = $this->currency->format($totals[1]['value'] + $totals[2]['value'], $this->session->data['currency']);
+			$data['total'] = $this->currency->format($totals[3]['value'], $this->session->data['currency']);
+            $data['text_total']               = $this->language->get('text_total');
+            $data['text_var']                 = $this->language->get('text_var');
+            $data['text_your_cart']           = $this->language->get('text_your_cart');
 
 			foreach ($totals as $total) {
-				$data['totals'][] = array(
+			    $data['totals'][] = array(
 					'title' => $total['title'],
 					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
 				);
