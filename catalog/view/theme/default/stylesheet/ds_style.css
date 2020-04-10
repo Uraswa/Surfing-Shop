@@ -928,10 +928,13 @@ body {
     font-size: 12px;
     border: none;
     font-weight: 600;
-    text-align: center;
 }
 
 .cart__table > thead {
+    border-bottom: 1px #E7E7E7 solid;
+}
+
+.product__row {
     border-bottom: 1px #E7E7E7 solid;
 }
 
@@ -942,11 +945,18 @@ body {
 
 
 .product__row__info {
-   }
+    display: flex;
+    max-width: 300px;
+}
 
 .product__row__info__img {
-    float: left;
     margin-right: 10px;
+}
+
+.product__row__info__title {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--dark-grey);
 }
 
 @media (max-width: 962px) {

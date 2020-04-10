@@ -92,7 +92,7 @@ class Cart {
 									'points'                  => $option_value_query->row['points'],
 									'points_prefix'           => $option_value_query->row['points_prefix'],
 									'weight'                  => $option_value_query->row['weight'],
-									'weight_prefix'           => $option_value_query->row['weight_prefix']
+									'weight_prefix'           => $option_value_query->row['weight_prefix'],
 								);
 							}
 						} elseif ($option_query->row['type'] == 'checkbox' && is_array($value)) {
@@ -259,7 +259,8 @@ class Cart {
 					'width'           => $product_query->row['width'],
 					'height'          => $product_query->row['height'],
 					'length_class_id' => $product_query->row['length_class_id'],
-					'recurring'       => $recurring
+					'recurring'       => $recurring,
+                    'overview'        => $product_query->row['overview']
 				);
 			} else {
 				$this->remove($cart['cart_id']);

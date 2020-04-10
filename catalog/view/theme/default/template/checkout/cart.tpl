@@ -3,9 +3,10 @@
         margin-top: 0;
     }
 </style>
-<div class="page-container-small" style='background-image: url("https://i1.wp.com/www.surfer.com/wp-content/uploads/2019/12/laura.jpg?resize=1920%2C1080&ssl=1"); object-fit: contain'
+<div class="page-container-small"
+     style='background-image: url("https://i1.wp.com/www.surfer.com/wp-content/uploads/2019/12/laura.jpg?resize=1920%2C1080&ssl=1"); object-fit: contain'
 >
-    <div class="container" >
+    <div class="container">
         <?php echo $header; ?>
 
         <div class="row" style="margin-top: 35px">
@@ -32,11 +33,6 @@
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                 </div>
                 <?php } ?>
-                <?php if ($success) { ?>
-                <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?>
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                <?php } ?>
                 <?php if ($error_warning) { ?>
                 <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -52,34 +48,35 @@
                     <?php } ?>
                     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
                         <div class="row">
-                            <div class="col-sm-9">
+                            <div class="col-xs-12 col-md-8">
                                 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered cart__table" >
+                                        <table class="table table-bordered cart__table">
                                             <thead>
-                                            <tr >
+                                            <tr>
                                                 <td class="text-left"><?php echo $column_name; ?></td>
+                                                <td class="text-left"><?php echo $column_price; ?></td>
                                                 <td class="text-left"><?php echo $column_quantity; ?></td>
-                                                <td class="text-right"><?php echo $column_price; ?></td>
-                                                <td class="text-right"><?php echo $column_total; ?></td>
+                                                <td class="text-left"><?php echo $column_total; ?></td>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php foreach ($products as $product) { ?>
                                             <tr class="product__row">
 
-                                                <td  class="text-left product__row__info" >
+                                                <td class="text-left product__row__info">
                                                     <div class="product__row__info__img">
                                                         <?php if ($product['thumb']) { ?>
                                                         <a href="<?php echo $product['href']; ?>"><img
                                                                     src="<?php echo $product['thumb']; ?>"
                                                                     alt="<?php echo $product['name']; ?>"
-                                                                    title="<?php echo $product['name']; ?>" class="img-thumbnail"/></a>
+                                                                    title="<?php echo $product['name']; ?>"
+                                                                    class="img-thumbnail"/></a>
                                                         <?php } ?>
                                                     </div>
                                                     <div>
-                                                        <a
-                                                                href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                                                        <a class="product__row__info__title"
+                                                           href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                                                         <?php if (!$product['stock']) { ?>
                                                         <span class="text-danger">***</span>
                                                         <?php } ?>
@@ -93,21 +90,16 @@
                                                     </div>
 
                                                 </td>
+                                                <td class="text-left"><?php echo $product['price']; ?></td>
                                                 <td class="text-left">
                                                     <div class="input-group btn-block" style="max-width: 200px;">
-                                                        <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]"
-                                                               value="<?php echo $product['quantity']; ?>" size="1"
-                                                               class="form-control"/>
-                                                        <span class="input-group-btn">
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>"
-                            class="btn btn-primary"><i class="fa fa-refresh"></i></button>
-                    <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>"
-                            class="btn btn-danger" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i
-                                class="fa fa-times-circle"></i></button>
-                    </span></div>
+
+                                                        <div class="product__options__bottom__quantity">
+                                                            <input minimum="<?php echo $product['minimum'] ?>" maxlength="2" minlength="1" id="input-quantity" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" class="product__options__select__field" type="text">
+                                                            <button id="cart__quantity__btn" class="product__options__bottom__quantity__btn">+</button>
+                                                        </div>
                                                 </td>
-                                                <td class="text-right"><?php echo $product['price']; ?></td>
-                                                <td class="text-right"><?php echo $product['total']; ?></td>
+                                                <td class="text-left"><?php echo $product['total']; ?> <img onclick="cart.remove('<?php echo $product['cart_id']; ?>');" class="cart__detele__row" style="cursor: pointer" height="10" src="image/catalog/close.svg"/></td>
                                             </tr>
                                             <?php } ?>
                                             <?php foreach ($vouchers as $voucher) { ?>
@@ -117,7 +109,8 @@
                                                 <td class="text-left"></td>
                                                 <td class="text-left">
                                                     <div class="input-group btn-block" style="max-width: 200px;">
-                                                        <input type="text" name="" value="1" size="1" disabled="disabled"
+                                                        <input type="text" name="" value="1" size="1"
+                                                               disabled="disabled"
                                                                class="form-control"/>
                                                         <span class="input-group-btn">
                     <button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>"
@@ -134,7 +127,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-xs-12 col-md-4">
                                 123
                             </div>
                         </div>
@@ -175,4 +168,20 @@
     </div>
 
     <?php echo $footer; ?>
+    <script>
+        $(document).ready(function () {
+            $('#cart__quantity__btn').on('click', function (e) {
+                // e.preventDefault();
+                const input = $(`#input-quantity`);
+                input.val(+input.val() < 99 ? +input.val() + 1 : 99);
+            });
+
+            $('#input-quantity').on('change', function (e) {
+               const minimum =  $(this).attr('minimum');
+               if ($(this).val() < minimum) {
+                   $(this).val(minimum)
+               }
+            });
+        });
+    </script>
 </div>
