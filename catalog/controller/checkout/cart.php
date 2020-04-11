@@ -273,6 +273,7 @@ class ControllerCheckoutCart extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+			$data['recently_viewed'] = $this->load->controller('product/recently_viewed');
 
 			$this->response->setOutput($this->load->view('checkout/cart', $data));
 		} else {
