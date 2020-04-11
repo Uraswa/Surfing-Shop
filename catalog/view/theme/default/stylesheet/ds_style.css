@@ -919,6 +919,17 @@ body {
 
 /*cart table*/
 
+.cart__table__wrapper__wrapper {
+    border-bottom: 1px #E9E9E9 solid;
+}
+
+.cart__table__wrapper{
+    display: flex;
+    min-height: 470px;
+    justify-content: space-between;
+    flex-direction: column
+}
+
 .cart__table {
     border: none;
     font-family: Roboto;
@@ -1049,6 +1060,7 @@ body {
     padding-left: 8px;
     font-size: 11px;
     height: 33px;
+    text-transform: uppercase;
 }
 
 /*pagination*/
@@ -1100,6 +1112,12 @@ body {
     background-image: url("/image/catalog/arrow-down.png");
     min-width: 50px;
 
+}
+
+@media (max-width: 991px) {
+   .cart__table__wrapper {
+       min-height: 0;
+   }
 }
 
 @media (max-width: 768px) {

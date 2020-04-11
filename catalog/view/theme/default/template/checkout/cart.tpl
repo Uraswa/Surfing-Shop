@@ -47,8 +47,8 @@
                     <?php $class = 'col-sm-12'; ?>
                     <?php } ?>
                     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-8">
+                        <div class="row cart__table__wrapper__wrapper">
+                            <div class="col-xs-12 col-md-8 cart__table__wrapper" >
                                 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
                                     <div class="table-responsive">
                                         <table class="table table-bordered cart__table">
