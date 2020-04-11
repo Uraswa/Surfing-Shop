@@ -1000,6 +1000,39 @@ body {
     margin-top: 60px;
 }
 
+/*coupon block*/
+
+.coupon__title {
+    font-size: 16px;
+    font-family: Roboto;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.coupon__input {
+    min-width: 100%;
+    margin-bottom: 10px;
+}
+
+.coupon__shopping {
+    font-style: italic;
+    color: black;
+    border-bottom: 2px #B2B2B2 solid;
+    display: inline-block;
+    margin-top: 10px;
+    line-height: 10px;
+}
+
+#button-coupon {
+    background: #2F2F2F;
+    border: 0;
+    color: white;
+    height: 35px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 @media (max-width: 962px) {
     .order_path__step {
         font-size: 16px;

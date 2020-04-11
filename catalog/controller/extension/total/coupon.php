@@ -9,6 +9,8 @@ class ControllerExtensionTotalCoupon extends Controller {
 			$data['text_loading'] = $this->language->get('text_loading');
 
 			$data['entry_coupon'] = $this->language->get('entry_coupon');
+			$data['entry_submit'] = $this->language->get('entry_submit');
+			$data['text_continue'] = $this->language->get('text_continue');
 
 			$data['button_coupon'] = $this->language->get('button_coupon');
 

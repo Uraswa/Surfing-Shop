@@ -126,6 +126,9 @@
                                         </table>
                                     </div>
                                 </form>
+                                <?php if ($modules) { ?>
+                                <?php echo $modules[0] ?>
+                                <?php } ?>
                             </div>
                             <div class="col-xs-12 col-md-4">
                                 <div class="cart__block">
@@ -138,15 +141,7 @@
                             </div>
                         </div>
 
-                        <?php if ($modules) { ?>
-                        <h2><?php echo $text_next; ?></h2>
-                        <p><?php echo $text_next_choice; ?></p>
-                        <div class="panel-group" id="accordion">
-                            <?php foreach ($modules as $module) { ?>
-                            <?php echo $module; ?>
-                            <?php } ?>
-                        </div>
-                        <?php } ?>
+
                         <br/>
                         <div class="buttons clearfix">
                             <div class="pull-left"><a href="<?php echo $continue; ?>"
