@@ -1006,6 +1006,17 @@ body {
     }
 }
 
+/*input*/
+
+.shop-input {
+    font-family: Roboto;
+    color: #AAAAAA !important;
+    border: 1px #E7E7E7 solid;
+    padding-left: 8px;
+    font-size: 11px;
+    height: 33px;
+}
+
 /*pagination*/
 
 .pagination {
