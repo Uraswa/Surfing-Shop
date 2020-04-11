@@ -140,6 +140,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php echo $related_products ?>
                         <?php echo $recently_viewed ?>
                         <?php echo $content_bottom; ?></div>
                 </div>

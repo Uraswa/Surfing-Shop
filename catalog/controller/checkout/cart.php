@@ -2,6 +2,7 @@
 class ControllerCheckoutCart extends Controller {
 	public function index() {
 		$this->load->language('checkout/cart');
+        $this->load->model('catalog/product');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -80,6 +81,7 @@ class ControllerCheckoutCart extends Controller {
 			$this->load->model('tool/upload');
 
 			$data['products'] = array();
+			$related = array();
 
 			$products = $this->cart->getProducts();
 
@@ -172,8 +174,20 @@ class ControllerCheckoutCart extends Controller {
 					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id']),
                     'overview'  => $product['overview']
 				);
+
+				$related_products = $this->model_catalog_product->getProductRelated($product['product_id']);
+
+				foreach ($related_products as $related_product){
+				    $related[] = $related_product;
+                }
 			}
 
+			if(count($related)) {
+                $this->load->language('product/product');
+                $data['related_products'] = $this->load->controller('product/products_slider', ['title' => $this->language->get('text_recommend'), 'products' => $related]);
+            } else {
+			    $data['related_products'] = '';
+            }
 			// Gift Voucher
 			$data['vouchers'] = array();
 
