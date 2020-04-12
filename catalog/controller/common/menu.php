@@ -19,15 +19,15 @@ class ControllerCommonMenu extends Controller {
         }
 
         $other_links = [
-            'sale',
-            'brands',
-            'blog',
-            'gadgets',
-            'contact'
+            ['sale', ''],
+            ['brands', ''],
+            ['blog', ''],
+            ['gadgets', ''],
+            ['contact', $this->url->link('information/contact')]
         ];
 
         foreach ($other_links as $other_link){
-            $items[] = [$this->language->get($other_link), '', false];
+            $items[] = [$this->language->get($other_link[0]), $other_link[1], false];
         }
 
         return $this->load->controller('common/left_menu', [
