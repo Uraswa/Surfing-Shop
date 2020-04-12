@@ -1,4 +1,13 @@
-<?php echo $header; ?>
+<div  style="position: relative">
+  <div style="position: absolute; top: 0; left: 0; z-index: 1; width: 100%">
+    <div class="container"><?php echo $header; ?></div>
+  </div>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d113910.60065752122!2d56.360261775229056!3d57.96049518644428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1586713347748!5m2!1sru!2sru"
+          width="100%" height="350" frameborder="0"
+          style="border:0; -webkit-filter: grayscale(100%);filter: grayscale(100%);" allowfullscreen=""
+          aria-hidden="false" tabindex="0"></iframe>
+</div>
+
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
