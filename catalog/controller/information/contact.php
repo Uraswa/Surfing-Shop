@@ -50,12 +50,18 @@ class ControllerInformationContact extends Controller {
 		$data['text_fax'] = $this->language->get('text_fax');
 		$data['text_open'] = $this->language->get('text_open');
 		$data['text_comment'] = $this->language->get('text_comment');
+		$data['text_to_actions'] = $this->language->get('text_to_actions');
 
 		$data['entry_name'] = $this->language->get('entry_name');
 		$data['entry_email'] = $this->language->get('entry_email');
 		$data['entry_enquiry'] = $this->language->get('entry_enquiry');
 
 		$data['button_map'] = $this->language->get('button_map');
+
+		$data['menu'] = $this->load->controller('common/menu');
+		$data['open_banner'] = $this->load->controller('common/open');
+		$data['social_links'] = $this->load->controller('common/social_links');
+		$data['brands'] = $this->load->controller('common/brands');
 
 		if (isset($this->error['name'])) {
 			$data['error_name'] = $this->error['name'];

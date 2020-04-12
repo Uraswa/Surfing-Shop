@@ -12,6 +12,7 @@ $_['text_fax']       = 'Fax';
 $_['text_open']      = 'Opening Times';
 $_['text_comment']   = 'Comments';
 $_['text_success']   = '<p>Your enquiry has been successfully sent to the store owner!</p>';
+$_['text_to_actions'] = 'If you have questions about your order or need any general information our customer service team will be happy to assist you.';
 
 // Entry
 $_['entry_name']     = 'Your Name';

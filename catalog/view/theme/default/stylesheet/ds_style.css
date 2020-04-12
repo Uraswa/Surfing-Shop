@@ -1051,6 +1051,71 @@ body {
     }
 }
 
+/*contact page*/
+
+.contact_page {
+    padding-top: 119px;
+    font-family: Roboto;
+}
+
+.conact_page__form label{
+    color: black;
+    text-transform: uppercase;
+}
+
+.contact_page__form__block {
+    margin-bottom: 33px;
+}
+
+.contact_page__info__address, .contact_page__info__mail, .contact_page__info__tel {
+    max-width: 200px;
+}
+
+.contact_page__info__address h5{
+    font-weight: 900;
+    font-size: 14px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.contact_page__info__address__address {
+    display: flex;
+    align-items: center;
+}
+
+.contact_page__info__address__address div:first-of-type {
+    margin-right: 10px;
+}
+
+.contact_page__info__address > div:last-of-type {
+    line-height: 14px;
+    margin-bottom: 26px;
+    margin-top: 13px;
+}
+
+.contact_page__info__tel a, .contact_page__info__tel {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 19px;
+}
+
+.contact_page__info__mail a {
+    font-size: 16px;
+    color: black !important;
+    text-decoration: underline;
+}
+
+.contact_page__info__mail {
+    margin-bottom: 31px
+}
+
+.contact_page__info__questions {
+    font-size: 14px;
+    line-height: 14px;
+    color: black;
+    max-width: 315px;
+}
+
 /*input*/
 
 .shop-input {
@@ -1060,7 +1125,14 @@ body {
     padding-left: 8px;
     font-size: 11px;
     height: 33px;
+    width: 100%;
     text-transform: uppercase;
+}
+
+textarea.shop-input {
+    text-transform: none !important;
+    height: 150px;
+
 }
 
 /*pagination*/
