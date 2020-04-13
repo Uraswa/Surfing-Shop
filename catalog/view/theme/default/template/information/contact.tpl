@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            
+            <span></span>
             <?php if ($locations) { ?>
             <h3><?php echo $text_store; ?></h3>
             <div class="panel-group" id="accordion">
