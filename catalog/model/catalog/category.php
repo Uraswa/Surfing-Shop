@@ -66,4 +66,12 @@ class ModelCatalogCategory extends Model {
 
 		return $query->row['total'];
 	}
+
+	public function getParentCategories($category_id){
+	    $categories = [];
+	    while (count($categories) == 0 || end($categories)['parent_id'] != 0){
+            $categories[] = $this->getCategory(count($categories) ? end($categories)['category_id'] : $category_id);
+        }
+	    return $categories;
+    }
 }
