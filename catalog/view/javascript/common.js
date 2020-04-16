@@ -162,6 +162,16 @@ $(document).ready(function() {
 		}
 	});
 
+	$('#input-limit, #input-sort').on('change', function (e) {
+		const params = new URL(location.href).searchParams;
+		const params1 = new URL($(this).val()).searchParams;
+		for(let param of params1) {
+			params.set(param[0], param[1]);
+		}
+
+		location = $('base').attr('href') + `index.php?${params.toString()}`;
+	});
+
 	// Menu
 	$('#menu .dropdown-menu').each(function() {
 		var menu = $('#menu').offset();

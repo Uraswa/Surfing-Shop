@@ -46,7 +46,7 @@
                             <div class="select_module" style="">
                                 <label class="input-sort-label" style="margin-right: 10px;"
                                        for="input-sort"><?php echo $text_sort; ?></label>
-                                <select id="input-sort" onchange="location = this.value;">
+                                <select name="sort" id="input-sort" >
                                     <?php foreach ($sorts as $sorts) { ?>
                                     <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
                                     <option value="<?php echo $sorts['href']; ?>"
@@ -74,7 +74,7 @@
                     <div class="col-sm-6 col-md-3 col-xs-6">
                         <div class="select_module">
                             <label for="input-limit"><?php echo $text_limit; ?></label>
-                            <select id="input-limit" onchange="location = this.value;">
+                            <select name="limit" id="input-limit" >
                                 <?php foreach ($limits as $limits) { ?>
                                 <?php if ($limits['value'] == $limit) { ?>
                                 <option value="<?php echo $limits['href']; ?>"
