@@ -9,7 +9,7 @@ class ControllerProductManufacturerLeftList extends Controller {
         $manufacturer_link = isset($this->request->get['manufacturer']) ? $this->request->get['manufacturer'] : '';
         $path = isset($this->request->get['path']) ? "&path=".$this->request->get['path'] : '';
         foreach ($manufacturers as $manufacturer){
-            $url = "manufacturer=".$manufacturer['manufacturer_id'].$path;
+            $url = "manufacturer=".$manufacturer['manufacturer_id'].$path.@('&search='.$this->request->get['search']);
             $items[] = [
               $manufacturer['name'],
               $this->url->link('product/category', $url),

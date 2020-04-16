@@ -90,22 +90,35 @@ class ControllerProductCategory extends Controller {
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
 
-		if ($category_info) {
+		if ($category_info || $category_id == 0) {
 
-			if ($category_info['meta_title']) {
-				$this->document->setTitle($category_info['meta_title']);
-			} else {
-				$this->document->setTitle($category_info['name']);
-			}
+		    if ($category_info){
+                if ($category_info['meta_title']) {
+                    $this->document->setTitle($category_info['meta_title']);
+                } else {
+                    $this->document->setTitle($category_info['name']);
+                }
 
-			$this->document->setDescription($category_info['meta_description']);
-			$this->document->setKeywords($category_info['meta_keyword']);
+                $this->document->setDescription($category_info['meta_description']);
+                $this->document->setKeywords($category_info['meta_keyword']);
 
-			if ($category_info['meta_h1']) {
-				$data['heading_title'] = $category_info['meta_h1'];
-			} else {
-				$data['heading_title'] = $category_info['name'];
-			}
+                if ($category_info['meta_h1']) {
+                    $data['heading_title'] = $category_info['meta_h1'];
+                } else {
+                    $data['heading_title'] = $category_info['name'];
+                }
+
+                if ($category_info['image']) {
+                    $data['thumb'] = $this->model_tool_image->resize($category_info['image'], $this->config->get($this->config->get('config_theme') . '_image_category_width'), $this->config->get($this->config->get('config_theme') . '_image_category_height'));
+                    $this->document->setOgImage($data['thumb']);
+                } else {
+                    $data['thumb'] = '';
+                }
+
+                $data['description'] = html_entity_decode($category_info['description'], ENT_QUOTES, 'UTF-8');
+            }
+
+
 
 			$data['text_refine'] = $this->language->get('text_refine');
 			$data['text_empty'] = $this->language->get('text_empty');
@@ -136,18 +149,11 @@ class ControllerProductCategory extends Controller {
 
 			// Set the last category breadcrumb
 			$data['breadcrumbs'][] = array(
-				'text' => $category_info['name'],
+				'text' => @$category_info['name'],
 				'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'])
 			);
 
-			if ($category_info['image']) {
-				$data['thumb'] = $this->model_tool_image->resize($category_info['image'], $this->config->get($this->config->get('config_theme') . '_image_category_width'), $this->config->get($this->config->get('config_theme') . '_image_category_height'));
-				$this->document->setOgImage($data['thumb']);
-			} else {
-				$data['thumb'] = '';
-			}
 
-			$data['description'] = html_entity_decode($category_info['description'], ENT_QUOTES, 'UTF-8');
 			$data['compare'] = $this->url->link('product/compare');
 
 			$url = '';
@@ -184,9 +190,16 @@ class ControllerProductCategory extends Controller {
 				);
 			}
 
+            if (isset($this->request->get['search'])) {
+                $search = $this->request->get['search'];
+            } else {
+                $search = '';
+            }
+
 			$data['products'] = array();
 
 			$filter_data = array(
+                'filter_name'         => $search,
 				'filter_category_id' => $category_id,
 				'filter_filter'      => $filter,
 				'filter_manufacturer_id' => isset($this->request->get['manufacturer']) ? $this->request->get['manufacturer'] : null,
@@ -362,15 +375,15 @@ class ControllerProductCategory extends Controller {
 
 			// http://googlewebmastercentral.blogspot.com/2011/09/pagination-with-relnext-and-relprev.html
 			if ($page == 1) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'], true), 'canonical');
+			    $this->document->addLink($this->url->link('product/category', 'path=' . @$category_info['category_id'], true), 'canonical');
 			} elseif ($page == 2) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'], true), 'prev');
+			    $this->document->addLink($this->url->link('product/category', 'path=' . @$category_info['category_id'], true), 'prev');
 			} else {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. ($page - 1), true), 'prev');
+			    $this->document->addLink($this->url->link('product/category', 'path=' . @$category_info['category_id'] . '&page='. ($page - 1), true), 'prev');
 			}
 
 			if ($limit && ceil($product_total / $limit) > $page) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. ($page + 1), true), 'next');
+			    $this->document->addLink($this->url->link('product/category', 'path=' . @$category_info['category_id'] . '&page='. ($page + 1), true), 'next');
 			}
 
 			$data['sort'] = $sort;

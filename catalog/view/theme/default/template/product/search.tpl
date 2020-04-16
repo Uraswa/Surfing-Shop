@@ -5,7 +5,15 @@
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
   </ul>
-  <div class="row"><?php echo $column_left; ?>
+  <div class="row">
+    <?php $column_left = $column_left ? $column_left : 3;
+    if ($column_left == 3) { ?>
+      <div class="col-sm-3">
+        <?php echo $menu ?>
+      </div>
+    <?php } else { ?>
+    <?php echo $column_left; ?>
+    <?php } ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>

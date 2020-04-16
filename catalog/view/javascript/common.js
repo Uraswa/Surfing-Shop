@@ -138,17 +138,22 @@ $(document).ready(function() {
 	});
 
 	/* Search */
-	$('#search__button').on('click', function() {
-		console.log('test');
-		var url = $('base').attr('href') + 'index.php?route=product/search';
-
-		var value = $('#search').val();
+	$('#search__form').on('submit', function(e) {
+		e.preventDefault();
+		const link = new URL(location.href);
+		let params = link.searchParams;
+		params.set('route', 'product/category');
+		const value = $('#search').val();
 
 		if (value) {
-			url += '&search=' + encodeURIComponent(value);
+			params.set('search', value);
 		}
 
-		location = url;
+		if (!params.has('path')){
+			params.set('path', '0');
+		}
+
+		location = $('base').attr('href') + `index.php?${params.toString()}`;
 	});
 
 	$('#search input[name=\'search\']').on('keydown', function(e) {

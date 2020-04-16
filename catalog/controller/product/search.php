@@ -15,6 +15,8 @@ class ControllerProductSearch extends Controller {
 			$search = '';
 		}
 
+		$data['search'] = $search;
+
 		if (isset($this->request->get['tag'])) {
 			$tag = $this->request->get['tag'];
 		} elseif (isset($this->request->get['search'])) {
@@ -487,6 +489,7 @@ class ControllerProductSearch extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+		$data['menu'] = $this->load->controller('common/menu');
 
 		$this->response->setOutput($this->load->view('product/search', $data));
 	}

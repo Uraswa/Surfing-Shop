@@ -145,7 +145,7 @@
                                     <strong><?php echo $text_open; ?></strong><br/>
                                     <?php echo $location['open']; ?><br/>
                                     <br/>
-                                    <?php } ?>
+                                           <?php } ?>
                                     <?php if ($location['comment']) { ?>
                                     <strong><?php echo $text_comment; ?></strong><br/>
                                     <?php echo $location['comment']; ?>

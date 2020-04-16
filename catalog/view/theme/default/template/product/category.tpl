@@ -12,18 +12,6 @@
                 <?php echo $open_banner ?>
             </div>
             <div id="content" class="col-sm-9" style="margin-top: 180px"><?php echo $content_top; ?>
-                <?php if ($thumb || $description) { ?>
-                <div class="row">
-                    <?php if ($thumb) { ?>
-                    <div class="col-sm-2"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>"
-                                               title="<?php echo $heading_title; ?>" class="img-thumbnail"/></div>
-                    <?php } ?>
-                    <?php if ($description) { ?>
-                    <div class="col-sm-10"><?php echo $description; ?></div>
-                    <?php } ?>
-                </div>
-                <hr>
-                <?php } ?>
                 <?php if ($categories) { ?>
                 <h3><?php echo $text_refine; ?></h3>
                 <?php if (count($categories) <= 5) { ?>
@@ -112,6 +100,9 @@
             <div class="products_grid">
                 <?php foreach ($products as $product) { ?>
                 <div><?php echo $product ?></div>
+                <?php } ?>
+                <?php if (!count($products)) { ?>
+                    0 results
                 <?php } ?>
             </div>
             <?php if ($products) { ?>
