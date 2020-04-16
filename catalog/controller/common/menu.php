@@ -14,10 +14,17 @@ class ControllerCommonMenu extends Controller {
         if (isset($this->request->get['route']) && $this->request->get['route'] == 'product/search'){
             $link_template = sprintf($link_template,'product/search', 'category_id=%s');
             $current_category = isset($this->request->get['category_id']) ? $this->request->get['category_id'] : 0;
-            $main_category = end($this->model_catalog_category->getParentCategories($current_category));
+
+            $main_category = $this->model_catalog_category->getParentCategories($current_category);
+            $main_category = end($main_category);
+
+            if (!$main_category){
+                $main_category = ['category_id' => -1];
+            }
+
         } else {
             $link_template = sprintf($link_template,'product/category', 'path=%s');
-            $main_category = explode('_', isset($this->request->get['path']) ? $this->request->get['path'] : '')[0];
+            $main_category = ['category_id' => explode('_', isset($this->request->get['path']) ? $this->request->get['path'] : '')[0]];
         }
 
         $categories = $this->model_catalog_category->getCategories();
@@ -27,7 +34,7 @@ class ControllerCommonMenu extends Controller {
             $items[] = [
                 $category['name'],
                 sprintf($link_template, $category['category_id']),
-                $main_category == $category['category_id']
+                $main_category['category_id'] == $category['category_id']
             ];
         }
 
