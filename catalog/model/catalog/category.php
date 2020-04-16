@@ -69,8 +69,12 @@ class ModelCatalogCategory extends Model {
 
 	public function getParentCategories($category_id){
 	    $categories = [];
-	    while (count($categories) == 0 || end($categories)['parent_id'] != 0){
-            $categories[] = $this->getCategory(count($categories) ? end($categories)['category_id'] : $category_id);
+	    while (true){
+            $category = $this->getCategory(count($categories) ? end($categories)['parent_id'] : $category_id);
+            $categories[] = $category;
+            if (!isset($category['parent_id']) || !$category['parent_id']){
+                break;
+            }
         }
 	    return $categories;
     }
