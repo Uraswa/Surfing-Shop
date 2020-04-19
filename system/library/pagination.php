@@ -45,7 +45,7 @@ class Pagination
         $output .= '<li  class="pagination_active"><a>' . $page . '</a></li>';
 
 
-        if ($num_pages > 2 && $page < $num_pages) {
+        if ($num_pages >= 2 && $page < $num_pages) {
             $output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . ($page + 1) . '</a></li>';
             $output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '"><img src="image/catalog/arrow-left.png" alt=""></a></li>';
         }
