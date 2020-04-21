@@ -1,7 +1,7 @@
 <div class="products__section">
     <div class="products__section__title">
         <?php echo $title ?>
-        <div>
+        <div class="products__section__title__buttons">
             <button class="products__carousel__1__nav_btn obratno">
                 <img src="image/catalog/arrow-right.png" alt="">
             </button>

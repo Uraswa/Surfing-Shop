@@ -83,23 +83,39 @@ $(document).ready(function() {
 		},
 		dots: false,
 	});
-	$('.products__carousel__1').owlCarousel({
-		items: 3,
-		responsive:{
-			0: {
-				items: 1
-			},
-			579: {
-				items: 2
-			},
-			1200:{
-				items:3
-			}
-		},
-		loop: true,
-		mouseDrag: false,
-		dots: false
-	});
+
+	let items = 2;
+	if (innerWidth => 1200) {
+		items = 3;
+	} else if (innerWidth <= 579){
+		items = 1;
+	}
+
+
+	$('.products__carousel__1').each(function () {
+		if ($(this).children().length <= items){
+			$(this).closest('.products__section').find('.products__section__title').find('.products__section__title__buttons').addClass('d-none');
+			$(this).removeClass('owl-carousel').removeClass('owl-theme').addClass('products_grid products_grid__grid')
+		} else {
+			$(this).owlCarousel({
+				items: 3,
+				responsive:{
+					0: {
+						items: 1
+					},
+					579: {
+						items: 2
+					},
+					1200:{
+						items:3
+					}
+				},
+				loop: true,
+				mouseDrag: false,
+				dots: false
+			});
+		}
+	})
 
 	$('.products__carousel__1__nav_btn').on('click', function() {
 		if ($(this).hasClass('obratno')){

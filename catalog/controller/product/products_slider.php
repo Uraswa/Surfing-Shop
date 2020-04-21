@@ -21,6 +21,7 @@ class ControllerProductProductsSlider extends Controller {
         }
         $data['products_rows'] = $products_rows;
         $data['title'] = $args['title'];
+        $data['total'] = count($products);
         return $this->load->view('product/products_slider', $data);
     }
 
