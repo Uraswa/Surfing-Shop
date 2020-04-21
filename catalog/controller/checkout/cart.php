@@ -11,7 +11,7 @@ class ControllerCheckoutCart extends Controller {
 		$data['category_options'] = $this->load->controller('product/category_options');
 		$data['manufacturer_left_list'] = $this->load->controller('product/manufacturer_left_list');
 		$data['open'] = $this->load->controller('common/open');
-		$data['brands'] = $this->load->controller('common/brands');
+		$data['social_links'] = $this->load->controller('common/social_links');
 		$data['order_path'] = $this->load->controller('checkout/order_path');
 
 		$data['breadcrumbs'][] = array(

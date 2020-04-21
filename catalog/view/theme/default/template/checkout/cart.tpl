@@ -146,7 +146,7 @@
                 </div>
                 <?php echo $column_right; ?></div>
         </div>
-        <?php echo $brands ?>
+        <?php echo $social_links ?>
     </div>
 
     <?php echo $footer; ?>
