@@ -13,7 +13,8 @@ class ControllerProductManufacturerLeftList extends Controller {
             $items[] = [
               $manufacturer['name'],
               $this->url->link('product/category', $url),
-              $manufacturer_link == $manufacturer['manufacturer_id']
+              $manufacturer_link == $manufacturer['manufacturer_id'],
+              ['manufacturer' => '']
             ];
         }
 

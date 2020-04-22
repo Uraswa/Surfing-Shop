@@ -126,6 +126,26 @@ $(document).ready(function() {
 
 	});
 
+	//left menu
+
+	$('.menu__item').on('click', function () {
+		if ($(this).hasClass('selected')){
+			const link = new URL(location.href);
+			let params = link.searchParams;
+			const href = JSON.parse($(this).attr('link'));
+			let newLocation = $('base').attr('href') + `index.php?${params.toString()}&`;
+
+			for(let param in href){
+				let regular = new RegExp(`${param}=.+&`);
+				newLocation = newLocation.replace(regular, href[param] + (href[param] ? '&' : ''));
+			}
+
+			location = newLocation.slice(0, -1);
+		} else {
+			location = $(this).attr('link');
+		}
+	});
+
 	// Highlight any found errors
 	$('.text-danger').each(function() {
 		var element = $(this).parent().parent();

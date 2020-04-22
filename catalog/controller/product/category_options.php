@@ -17,7 +17,7 @@ class ControllerProductCategoryOptions extends Controller {
                 foreach ($categories as $category) {
                     $path = $main_category . '_' . $category['category_id'];
                     $url = "$manufacturer&path=" . $path.@('&search='.$this->request->get['search']);
-                    $items[] = [$category['name'], $this->url->link('product/category', $url), $this->request->get['path'] == $path];
+                    $items[] = [$category['name'], $this->url->link('product/category', $url), $this->request->get['path'] == $path, ['path' => "path=$main_category"]];
                 }
             }
         }

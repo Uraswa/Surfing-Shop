@@ -34,7 +34,8 @@ class ControllerCommonMenu extends Controller {
             $items[] = [
                 $category['name'],
                 sprintf($link_template, $category['category_id']),
-                $main_category['category_id'] == $category['category_id']
+                $main_category['category_id'] == $category['category_id'],
+                ['path' => '']
             ];
         }
 
@@ -43,11 +44,11 @@ class ControllerCommonMenu extends Controller {
             ['brands', ''],
             ['blog', ''],
             ['gadgets', ''],
-            ['contact', $this->url->link('information/contact')]
+            ['contact', $this->url->link('information/contact'), @$this->request->get['route'] == 'information/contact', ['route' => 'route=common/home']]
         ];
 
         foreach ($other_links as $other_link){
-            $items[] = [$this->language->get($other_link[0]), $other_link[1], false];
+            $items[] = [$this->language->get($other_link[0]), $other_link[1], @$other_link[2], @$other_link[3]];
         }
 
         return $this->load->controller('common/left_menu', [
