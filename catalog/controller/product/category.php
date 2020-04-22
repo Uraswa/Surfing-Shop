@@ -47,6 +47,7 @@ class ControllerProductCategory extends Controller {
 			'href' => $this->url->link('common/home')
 		);
 
+        $this->request->get['path'] = isset($this->request->get['path']) ? $this->request->get['path'] : '0';
 		if (isset($this->request->get['path'])) {
 			$url = '';
 
