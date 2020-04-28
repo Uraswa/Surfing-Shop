@@ -14,15 +14,13 @@ class ControllerCheckoutCart extends Controller {
 		$data['social_links'] = $this->load->controller('common/social_links');
 		$data['order_path'] = $this->load->controller('checkout/order_path');
 
-		$data['breadcrumbs'][] = array(
-			'href' => $this->url->link('common/home'),
-			'text' => $this->language->get('text_home')
-		);
 
 		$data['breadcrumbs'][] = array(
 			'href' => $this->url->link('checkout/cart'),
 			'text' => $this->language->get('heading_title')
 		);
+
+		$data['breadcrumbs_module'] = $this->load->controller('common/breadcrumbs', $data['breadcrumbs']);
 
 		if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
 			$data['heading_title'] = $this->language->get('heading_title');

@@ -20,13 +20,8 @@
             </div>
 
             <div class="col-sm-9" style="background:#F8F8F8;">
-                <!--
-                    <ul class="breadcrumb">
-                        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-                        <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-                        <?php } ?>
-                    </ul>
-                !-->
+                <div style="margin-top: 24px"><?php echo $breadcrumbs_module ?></div>
+                
                 <?php echo $order_path ?>
                 <?php if ($attention) { ?>
                 <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $attention; ?>

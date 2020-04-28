@@ -896,7 +896,7 @@ body {
 
 .order_path {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 35px;
     padding-bottom: 40px;
     font-size: 24px;
