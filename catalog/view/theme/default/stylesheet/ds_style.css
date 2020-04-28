@@ -1209,6 +1209,34 @@ textarea.shop-input {
     }
 }
 
+/*breadcrumbs*/
+
+.breadcrumb__module {
+    display: flex;
+    justify-content: space-between;
+}
+
+.breadcrumb__list {
+    display: flex;
+    flex-direction: row;
+}
+
+.breadcrumb__list > div {
+    flex: 1 1 auto;
+    margin: 0 2.5px;
+    text-align: center;
+}
+
+.breadcrumb__list > div > a, .breadcrumb__list > div {
+    color: #989898;
+    font-size: 12px;
+}
+
+.breadcrumb__list > div:last-child {
+    background: yellow;
+    padding: 2px 5px;
+}
+
 /*footer*/
 
 footer {
