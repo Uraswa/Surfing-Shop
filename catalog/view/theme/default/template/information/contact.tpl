@@ -32,6 +32,7 @@
         <?php $class = 'col-sm-12'; ?>
         <?php } ?>
         <div id="content" class="<?php echo $class; ?> contact_page"><?php echo $content_top; ?>
+            <?php echo $breadcrumbs_module ?>
             <div class="row">
                 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal col-sm-6 conact_page__form">
                     <fieldset>

@@ -31,14 +31,11 @@ class ControllerInformationContact extends Controller {
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
-		);
-
-		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
 			'href' => $this->url->link('information/contact')
 		);
+
+		$data['breadcrumbs_module'] = $this->load->controller('common/breadcrumbs', $data['breadcrumbs']);
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
