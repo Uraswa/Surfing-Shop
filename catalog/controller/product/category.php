@@ -42,11 +42,6 @@ class ControllerProductCategory extends Controller {
 
 		$data['breadcrumbs'] = array();
 
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
-		);
-
         $this->request->get['path'] = isset($this->request->get['path']) ? $this->request->get['path'] : '0';
 		if (isset($this->request->get['path'])) {
 			$url = '';
@@ -153,6 +148,8 @@ class ControllerProductCategory extends Controller {
 				'text' => @$category_info['name'],
 				'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'])
 			);
+
+			$data['breadcrumbs_module'] = $this->load->controller('common/breadcrumbs', $data['breadcrumbs']);
 
 
 			$data['compare'] = $this->url->link('product/compare');

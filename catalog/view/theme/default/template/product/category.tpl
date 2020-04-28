@@ -11,7 +11,8 @@
                 <?php echo $manufacturers ?>
                 <?php echo $open_banner ?>
             </div>
-            <div id="content" class="col-sm-9" style="margin-top: 180px"><?php echo $content_top; ?>
+            <div id="content" class="col-sm-9" style="margin-top: 220px"><?php echo $content_top; ?>
+                <?php echo $breadcrumbs_module ?>
                 <?php if ($categories) { ?>
                 <h3><?php echo $text_refine; ?></h3>
                 <?php if (count($categories) <= 5) { ?>
