@@ -8,11 +8,6 @@ class ControllerProductProduct extends Controller {
 
         $data['breadcrumbs'] = array();
 
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
-		);
-
 		$this->load->model('catalog/category');
 
 		if (isset($this->request->get['path'])) {
@@ -214,6 +209,8 @@ class ControllerProductProduct extends Controller {
 				'text' => $product_info['name'],
 				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'])
 			);
+
+			$data['breadcrumbs_module'] = $this->load->controller('common/breadcrumbs', $data['breadcrumbs']);
 
 			if ($product_info['meta_title']) {
 				$this->document->setTitle($product_info['meta_title']);

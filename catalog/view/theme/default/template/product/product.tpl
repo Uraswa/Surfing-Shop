@@ -28,6 +28,9 @@
             <?php $class = 'col-sm-12'; ?>
             <?php } ?>
             <div id="content" style="margin-top: 200px" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+                <div style="margin-bottom: 10px; margin-top: 15px">
+                    <?php echo $breadcrumbs_module ?>
+                </div>
                 <div class="row">
                     <?php if ($column_left || $column_right) { ?>
                     <?php $class = 'col-sm-6'; ?>
