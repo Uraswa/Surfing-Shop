@@ -44,7 +44,7 @@
                     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
                         <div class="row cart__table__wrapper__wrapper">
                             <div class="col-xs-12 col-md-8 cart__table__wrapper" >
-                                <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+                                <form id="cart__form" action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
                                     <div class="table-responsive">
                                         <table class="table table-bordered cart__table">
                                             <thead>
@@ -90,8 +90,8 @@
                                                     <div class="input-group btn-block" style="max-width: 200px;">
 
                                                         <div class="product__options__bottom__quantity">
-                                                            <input minimum="<?php echo $product['minimum'] ?>" maxlength="2" minlength="1" id="input-quantity" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" class="product__options__select__field" type="text">
-                                                            <button id="cart__quantity__btn" class="product__options__bottom__quantity__btn">+</button>
+                                                            <input minimum="<?php echo $product['minimum'] ?>" maxlength="2" minlength="1"  name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" class="product__options__select__field" type="text">
+                                                            <button  class="product__options__bottom__quantity__btn">+</button>
                                                         </div>
                                                 </td>
                                                 <td class="text-left"><?php echo $product['total']; ?> <img onclick="cart.remove('<?php echo $product['cart_id']; ?>');" class="cart__detele__row" style="cursor: pointer" height="10" src="image/catalog/close.svg"/></td>
@@ -147,13 +147,13 @@
     <?php echo $footer; ?>
     <script>
         $(document).ready(function () {
-            $('#cart__quantity__btn').on('click', function (e) {
+            $('.product__options__bottom__quantity__btn').on('click', function (e) {
                 // e.preventDefault();
-                const input = $(`#input-quantity`);
+                const input = $(this).prev();
                 input.val(+input.val() < 99 ? +input.val() + 1 : 99);
             });
 
-            $('#input-quantity').on('change', function (e) {
+            $('.product__options__select__field').on('change', function (e) {
                const minimum =  $(this).attr('minimum');
                if ($(this).val() < minimum) {
                    $(this).val(minimum)

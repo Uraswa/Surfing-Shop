@@ -58,8 +58,10 @@ $(document).ready(function () {
         }
     });
 
+
+
     $('.product__options__bottom__quantity__btn').on('click', function () {
-       const input = $(`#input-quantity`);
+       const input = $(this).prev();
        input.val(+input.val() < 99 ? +input.val() + 1 : 99);
     });
 });
