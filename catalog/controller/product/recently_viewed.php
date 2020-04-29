@@ -23,8 +23,7 @@ class ControllerProductRecentlyViewed extends Controller {
             setcookie('recently', json_encode($recently));
         }
 
-        $recently_watched = $current_product ? [$current_product] : [];
-        foreach (array_slice($recently, 1) as $product_id){
+        foreach ($recently as $product_id){
             $recently_watched[] = $this->model_catalog_product->getProduct($product_id);
         }
         return $this->load->controller('product/products_slider', ['products' => $recently_watched, 'title' => $this->language->get('text_recently')]);
